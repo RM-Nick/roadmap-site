@@ -81,7 +81,9 @@ section.s { padding-block:clamp(40px,7vw,72px); border-bottom:1px solid var(--li
 .service p { margin:0; color:var(--muted); }
 .service ul { margin:0; padding-left:1.1rem; display:grid; gap:4px; }
 
-.route { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,8.5rem),1fr)); counter-reset:stop; border-top:3px solid var(--accent); }
+.route { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,8.5rem),1fr)); counter-reset:stop; }
+/* Route line: drawn per stop, only from a dot to the next dot on the same row (rows are worked out in script) */
+.route li.link { background:linear-gradient(var(--accent),var(--accent)) left top / 100% 3px no-repeat; }
 .route li { counter-increment:stop; padding:20px 20px 22px 0; display:grid; gap:6px; align-content:start; min-width:0; position:relative; }
 .route li::before { content:counter(stop,decimal-leading-zero); font-family:var(--mono); font-size:.8rem; color:var(--accent-text); font-weight:500; }
 .route li::after { content:""; position:absolute; top:-9px; left:0; width:15px; height:15px; border-radius:50%; background:var(--bg); border:3px solid var(--accent); }
@@ -187,9 +189,8 @@ nav a:hover, nav a:focus-visible { background-size:100% 2px; }
   .js .rv { opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; transition-delay:calc(var(--d,0) * 90ms); }
   .js .rv.in { opacity:1; transform:none; }
   /* Route line draws itself, stops appear in turn, ending on the yellow stop */
-  .js .route { border-top-color:transparent; position:relative; }
-  .js .route::before { content:""; position:absolute; left:0; right:0; top:-3px; height:3px; background:var(--accent); transform:scaleX(0); transform-origin:left center; transition:transform 1.2s cubic-bezier(.3,.7,.2,1); }
-  .js .route.in::before { transform:scaleX(1); }
+  .js .route li.link { background-size:0 3px; transition:opacity .45s ease, transform .45s ease, background-size .5s ease; transition-delay:calc(var(--i,0) * 150ms + 150ms); }
+  .js .route.in li.link { background-size:100% 3px; }
   .js .route li { opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease; transition-delay:calc(var(--i,0) * 150ms + 150ms); }
   .js .route li::after { transform:scale(.4); transition:transform .35s cubic-bezier(.3,1.6,.5,1); transition-delay:calc(var(--i,0) * 150ms + 150ms); }
   .js .route.in li { opacity:1; transform:none; }
@@ -372,6 +373,14 @@ header.site .lockup .rn { color:var(--g-fg); }
       b.replaceWith(a); a.focus();
     });
   });
+})();
+</script>
+<script>
+// Join each route dot to the next one only when both sit on the same row
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.route li'));
+  function link(){ items.forEach(function(li,i){ var n=items[i+1]; li.classList.toggle('link', !!n && Math.abs(n.offsetTop-li.offsetTop)<4); }); }
+  link(); window.addEventListener('resize', link); if(document.fonts && document.fonts.ready) document.fonts.ready.then(link);
 })();
 </script>
 <script>
