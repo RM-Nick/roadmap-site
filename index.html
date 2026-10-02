@@ -210,6 +210,13 @@ header.site .lockup .rn { color:var(--g-fg); }
   header.site .lockup { font-size:1.35rem; gap:10px; }
   header.site .lockup svg { width:40px; height:40px; }
 }
+/* Road texture in the header, faded behind the logo */
+header.site { isolation:isolate; overflow:hidden; }
+header.site::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:#ffffff30;
+  --fade:linear-gradient(90deg, transparent 0%, transparent 18%, #000 46%);
+  -webkit-mask-image:var(--map), var(--fade); -webkit-mask-size:cover, 100% 100%; -webkit-mask-position:center 38%, 0 0; -webkit-mask-repeat:no-repeat; -webkit-mask-composite:source-in;
+  mask-image:var(--map), var(--fade); mask-size:cover, 100% 100%; mask-position:center 38%, 0 0; mask-repeat:no-repeat; mask-composite:intersect; }
+@media (max-width:700px){ header.site::before { --fade:linear-gradient(90deg, transparent 0%, transparent 30%, #000 75%); } }
 </style>
 </head>
 <body>
