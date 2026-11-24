@@ -244,12 +244,13 @@ section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
 .contact :focus-visible{ outline-color:var(--g-accent); }
 .reach{ display:flex; flex-direction:column; gap:16px; }
 .reach .btn-y{ min-height:56px; font-size:19px; }
-.reveals{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.reveals{ display:flex; flex-wrap:wrap; gap:16px; }
+.reveals > *{ flex:1 1 13rem; }
 .reveal, .reveals .value{ display:flex; align-items:center; justify-content:center; min-height:48px; padding:0 12px; border:1px solid #ffffff66; border-radius:6px; background:transparent; color:var(--g-fg); font:600 17px/1.2 var(--body); text-align:center; cursor:pointer; overflow-wrap:anywhere; }
 .reveal:hover{ border-color:var(--g-accent); }
-.reveals .value{ text-decoration:underline; text-decoration-color:var(--g-accent); cursor:auto; }
+.reveals .value{ text-decoration:underline; text-decoration-color:var(--g-accent); cursor:auto; white-space:nowrap; overflow-wrap:normal; }
 .reach .who{ font-size:15px; }
-@media (max-width:480px){ .reveals{ grid-template-columns:minmax(0,1fr); } }
+@media (max-width:340px){ .reveals .value{ white-space:normal; overflow-wrap:anywhere; } }
 
 /* Footer */
 footer{ background:var(--foot); color:var(--g-muted); padding:56px 0 40px; font-size:14px; }
