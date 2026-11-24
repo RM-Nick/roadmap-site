@@ -1,0 +1,26 @@
+# Roadmap Consulting
+
+> Roadmap Consulting Ltd is an independent consultancy that implements transport management systems (TMS) for UK hauliers, 3PLs and pallet network members. Nick Dyson, Principal Consultant, gets a new TMS live one depot at a time. The work covers data migration, rate cards, training, go-live support and hypercare. Current depth is Qargo, a cloud TMS. Based in Cardiff, working across the UK.
+
+Nick Dyson was Customer Onboarding Manager at Qargo and is independent now. Roadmap Consulting is not a Qargo partner and Qargo does not endorse its work. Before Qargo he worked in transport roles at XPO, Amazon, UPS and A.S. Watson. He is currently rolling out Qargo across the 13 depots of a UK haulage group.
+
+The first step is a 30-minute call about the operation. Within 2 working days the client gets a one-page written plan to keep. It covers what to do next, the main risks, and what the TMS vendor will leave to the client. It suits hauliers, 3PLs and pallet network members moving 2 or more depots onto a new TMS. The best time to talk is before signing with a vendor, but part way through is fine too.
+
+A depot goes live in seven stages: scoping, data, rates, build, parallel run, go-live week (on site) and a 90-day check. Each stage ends with something the client keeps. Examples are the data mapping, rate cards tested against last month's jobs, and the invoice comparison from the parallel run.
+
+## Pages
+
+- [Home](https://roadmapconsulting.co.uk/): what the work covers, the seven-stage method, and what owners, finance directors, transport managers, planners and IT each need to see
+- [Help for teams already on Qargo](https://roadmapconsulting.co.uk/qargo/): independent Qargo specialist support for operators who are already live
+- [Sample one-page plan (PDF)](https://roadmapconsulting.co.uk/sample-plan.pdf): the format of the written plan, with a fictional client
+- [Privacy notice](https://roadmapconsulting.co.uk/privacy.html)
+
+## Contact
+
+- [Get your one-page TMS plan](https://calendar.app.google/QbgweHab81wm1Z1L8): book the 30-minute call
+- [LinkedIn: Nick Dyson](https://www.linkedin.com/in/dysonick)
+- Email and phone are on the home page, under Contact
+
+## Company
+
+Roadmap Consulting Ltd, registered in England and Wales, company number 16726574. VAT number 520 4345 31. Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ.
