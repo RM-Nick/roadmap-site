@@ -30,7 +30,7 @@
   --head:#123824; --accent:#1f6b45; --accent-hover:#123824;
   --yellow:#e3aa12; --yellow-hover:#f0b928; --on-yellow:#123824;
   --g-bg:#123824; --g-surface:#174429; --g-fg:#ffffff; --g-muted:#c9d8ce; --g-line:#2a5a3e; --g-accent:#e3aa12; --foot:#0d2a1b;
-  --map-ink:#17231c1f; --tab-on:#123824;
+  --map-ink:#17231c21; --tab-on:#123824;
   --shadow:0 1px 2px #12382414, 0 24px 48px -16px #12382447;
   --display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
   --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
@@ -38,14 +38,14 @@
 }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
   --bg:#123824; --surface:#174429; --fg:#ffffff; --fg-2:#e6eee8; --muted:#c9d8ce; --line:#2a5a3e;
-  --head:#ffffff; --accent:#e3aa12; --accent-hover:#f0b928;
+  --head:#ffffff; --accent:#f0b928; --accent-hover:#f7c948;
   --g-bg:#0b2516; --g-surface:#123824; --g-line:#24503a; --foot:#071a0f;
-  --map-ink:#ffffff17; --tab-on:#0b2516; --shadow:0 24px 48px -16px #00000080; color-scheme:dark; } }
+  --map-ink:#ffffff1f; --tab-on:#0b2516; --shadow:0 24px 48px -16px #00000080; color-scheme:dark; } }
 :root[data-theme="dark"]{
   --bg:#123824; --surface:#174429; --fg:#ffffff; --fg-2:#e6eee8; --muted:#c9d8ce; --line:#2a5a3e;
-  --head:#ffffff; --accent:#e3aa12; --accent-hover:#f0b928;
+  --head:#ffffff; --accent:#f0b928; --accent-hover:#f7c948;
   --g-bg:#0b2516; --g-surface:#123824; --g-line:#24503a; --foot:#071a0f;
-  --map-ink:#ffffff17; --tab-on:#0b2516; --shadow:0 24px 48px -16px #00000080; color-scheme:dark; }
+  --map-ink:#ffffff1f; --tab-on:#0b2516; --shadow:0 24px 48px -16px #00000080; color-scheme:dark; }
 :root[data-theme="light"]{ color-scheme:light; }
 
 *{ box-sizing:border-box; }
@@ -92,7 +92,7 @@ section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
 .menu-btn .i-close{ display:none; }
 .site.open .menu-btn .i-open{ display:none; } .site.open .menu-btn .i-close{ display:block; }
 @media (prefers-reduced-motion:no-preference){ .nav a{ transition:background-size .2s ease-out; } }
-@media (max-width:980px){
+@media (max-width:1180px){
   .menu-btn{ display:inline-flex; }
   .nav{ display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:0; padding:8px clamp(16px,4vw,40px) 20px; background:var(--g-bg); border-top:1px solid var(--g-line); box-shadow:0 12px 24px #0b25164d; }
   .site.open .nav{ display:flex; }
@@ -101,13 +101,25 @@ section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
   .nav .nav-cta:hover{ background:var(--yellow-hover); color:var(--on-yellow); }
 }
 @media (max-width:600px){ .head-right .btn{ display:none; } .lockup{ font-size:21px; gap:10px; } .lockup svg{ width:36px; height:36px; } .site .bar{ height:64px; } }
+/* Header, Qargo-page style (Nick's D1b, 24 Nov 2026): larger logo, tucks in once you scroll */
+.site .bar{ height:auto; padding-block:16px; }
+.lockup{ font-size:1.9rem; gap:14px; }
+.lockup svg{ width:64px; height:64px; }
+@media (min-width:601px){
+  .site.compact .bar{ padding-block:8px; }
+  .site.compact .lockup{ font-size:1.5rem; }
+  .site.compact .lockup svg{ width:44px; height:44px; }
+}
+.site.compact{ box-shadow:0 2px 12px #0b251633; }
+@media (prefers-reduced-motion:no-preference){ .site .bar{ transition:padding .25s ease-out; } .lockup{ transition:font-size .25s ease-out; } .lockup svg{ transition:width .25s ease-out, height .25s ease-out; } .site{ transition:box-shadow .25s ease-out; } }
+@media (max-width:600px){ .site .bar{ padding-block:16px; } .lockup{ font-size:1.35rem; gap:10px; } .lockup svg{ width:40px; height:40px; } }
 
 /* Map behind the hero and the method band */
 .map{ position:absolute; pointer-events:none; background:var(--map-ink); -webkit-mask:url("/assets/os-map.svg") center / cover no-repeat; mask:url("/assets/os-map.svg") center / cover no-repeat; }
 
 /* Hero */
 .hero{ position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
-.hero .map{ top:-40px; right:-320px; width:1500px; height:563px; }
+.hero .map{ inset:0; }
 .hero .two{ position:relative; padding-block:clamp(28px,3.5vw,48px) clamp(48px,7vw,80px); align-items:start; }
 .eyebrow{ margin:0 0 20px; font-weight:600; color:var(--accent); }
 .hero h1{ font-size:clamp(40px,5vw,64px); line-height:1.04; letter-spacing:-.01em; }
@@ -166,7 +178,7 @@ section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
 
 /* How a depot goes live */
 .method{ background:var(--g-bg); color:var(--g-fg); padding-block:clamp(56px,9vw,96px); position:relative; overflow:hidden; }
-.method .map{ left:-200px; bottom:-120px; width:1700px; height:638px; background:#ffffff14; }
+.method .map{ inset:0; background:#ffffff14; }
 .method .wrap{ position:relative; }
 .method h2, .method h3{ color:var(--g-fg); }
 .method .intro{ margin:16px 0 48px; font-size:19px; color:var(--g-muted); max-width:640px; }
@@ -290,16 +302,17 @@ footer .mono{ font-family:var(--mono); font-size:13px; }
   .creds ul{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .roles{ grid-template-columns:minmax(0,1fr); gap:20px; }
   .parallel{ grid-template-columns:minmax(0,1fr); gap:28px; }
-  .hero .map{ right:-700px; }
 }
 @media (max-width:560px){ .creds ul{ grid-template-columns:minmax(0,1fr); gap:16px; padding-block:24px; } .lead{ font-size:18px; } .work .intro, .method .intro, .contact .intro{ font-size:18px; } }
 
 /* Motion: plays once on scroll, transform and opacity only, off for reduced motion and without script */
-@media (min-width:981px){ html{ scroll-padding-top:88px; } }
+html{ scroll-padding-top:80px; }
 @media (prefers-reduced-motion:no-preference){
   html{ scroll-behavior:smooth; }
   .js .rv{ opacity:0; transform:translateY(14px); transition:opacity .5s ease-out, transform .5s ease-out; transition-delay:calc(var(--d,0) * 80ms); }
   .js .rv.in{ opacity:1; transform:none; }
+  /* Hero map drifts slightly slower than the page, as on /qargo/ */
+  .js .hero .map{ top:-180px; will-change:transform; }
   .js .route li::before{ transform:scaleX(0); transition:transform .28s ease-out; transition-delay:calc(var(--i,0) * 140ms + 200ms); }
   .js .route.in li::before{ transform:none; }
   .js .route .dot{ opacity:0; transform:scale(.6); transition:opacity .2s ease-out, transform .2s ease-out; transition-delay:calc(var(--i,0) * 140ms + 120ms); }
@@ -599,6 +612,9 @@ footer .mono{ font-family:var(--mono); font-size:13px; }
   var header=document.querySelector('header.site'), btn=header.querySelector('.menu-btn'), nav=document.getElementById('site-nav');
   function set(open){ header.classList.toggle('open',open); btn.setAttribute('aria-expanded',String(open)); }
   btn.addEventListener('click',function(){ set(btn.getAttribute('aria-expanded')!=='true'); });
+  // Header tucks in once the page has scrolled
+  function onScroll(){ header.classList.toggle('compact', window.scrollY > 60); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   nav.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && header.classList.contains('open')){ set(false); btn.focus(); } });
 })();
@@ -632,6 +648,10 @@ footer .mono{ font-family:var(--mono); font-size:13px; }
   var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce || !('IntersectionObserver' in window)) return;
   document.documentElement.classList.add('js');
+  // Map parallax, hero only, small amplitude (as on /qargo/)
+  var map=document.querySelector('.hero .map'), hero=document.querySelector('.hero'), ticking=false;
+  function drift(){ ticking=false; var r=hero.getBoundingClientRect(); if(r.bottom<0) return; map.style.transform='translate3d(0,'+(window.scrollY*0.18).toFixed(1)+'px,0)'; }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(drift); } }, {passive:true});
   document.querySelectorAll('.four-parts .rv').forEach(function(el,i){ el.style.setProperty('--d', i); });
   document.querySelectorAll('.route li').forEach(function(li,i){ li.style.setProperty('--i', i); });
   var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
