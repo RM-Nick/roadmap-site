@@ -319,6 +319,15 @@ html{ scroll-padding-top:80px; }
   .js .route.in .dot{ opacity:1; transform:none; }
   @media (max-width:1100px){ .js .route li::before{ transform:scaleY(0); } }
 }
+
+/* Parallel run plays once (Nick's D3a, 24 Nov 2026): counts tick up while the three differences come in one by one */
+.pr-nums strong{ min-width:3ch; }
+@media (prefers-reduced-motion:no-preference){
+  .pr-start tbody tr{ opacity:0; transform:translateY(8px); }
+  .pr-start tbody td:last-child{ opacity:0; }
+  .pr-start.pr-go tbody tr{ opacity:1; transform:none; transition:opacity .25s ease-out, transform .25s ease-out; transition-delay:var(--t,0s); }
+  .pr-start.pr-go tbody td:last-child{ opacity:1; transition:opacity .2s ease-out; transition-delay:calc(var(--t,0s) + .18s); }
+}
 </style>
 </head>
 <body class="no-js">
@@ -457,6 +466,7 @@ html{ scroll-padding-top:80px; }
             <tbody>
               <tr><td>Example Foods</td><td>£1,240.00</td><td>£1,218.40</td><td>Fuel surcharge month</td></tr>
               <tr><td>Sample Timber</td><td>£386.50</td><td>£412.50</td><td>Tail-lift extra missing in old</td></tr>
+              <tr><td>Demo Retail</td><td>£72.00</td><td>£84.00</td><td>Waiting time not charged in old</td></tr>
             </tbody>
           </table>
         </div>
@@ -642,6 +652,33 @@ html{ scroll-padding-top:80px; }
   document.querySelectorAll('footer a[data-role]').forEach(function(a){
     a.addEventListener('click',function(){ pick(document.getElementById('tab-'+a.dataset.role)); });
   });
+})();
+// Parallel run figure plays once on entering view (Nick's D3a, 24 Nov 2026).
+// The page holds the finished figures; they drop to 0 only when the card comes into view, then count up.
+(function(){
+  var fig=document.querySelector('.parallel figure');
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!fig || reduce || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
+  var nums=[].slice.call(fig.querySelectorAll('.pr-nums strong')), rows=[].slice.call(fig.querySelectorAll('tbody tr'));
+  var at=[500,800,1100], D=1200;
+  rows.forEach(function(r,i){ r.style.setProperty('--t', (at[Math.min(i,at.length-1)]/1000)+'s'); });
+  function play(wait){
+    var to=nums.map(function(n){ return parseInt(n.textContent.replace(/[^0-9]/g,''),10)||0; });
+    fig.classList.add('pr-start'); nums.forEach(function(n){ n.textContent='0'; });
+    var t0=null;
+    function frame(now){
+      if(t0===null) t0=now;
+      var t=now-t0, e=1-Math.pow(1-Math.min(1,t/D),3);
+      nums[0].textContent=Math.round(to[0]*e); nums[1].textContent=Math.round(to[1]*e);
+      nums[2].textContent=Math.min(to[2], at.filter(function(x){ return t>=x; }).length);
+      if(t<Math.max(D,at[at.length-1])) requestAnimationFrame(frame);
+      else nums.forEach(function(n,i){ n.textContent=to[i]; });
+    }
+    setTimeout(function(){ void fig.offsetWidth; fig.classList.add('pr-go'); requestAnimationFrame(frame); }, wait);
+  }
+  // Wait for the card to finish rising in (.rv takes 0.5 s) before the count starts
+  var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); play(fig.classList.contains('rv') ? 450 : 0); } }, {threshold:0.3});
+  io.observe(fig);
 })();
 // Motion: blocks rise in once, the route draws stop by stop
 (function(){

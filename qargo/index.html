@@ -17,262 +17,373 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Independent Qargo training, setup and support", "serviceType": "Transport management system (TMS) consultancy", "url": "https://roadmapconsulting.co.uk/qargo/", "description": "Independent Qargo help for UK hauliers, 3PLs and pallet network members: planning training, setup health checks, rate cards, invoicing and new depots, from a former Qargo onboarding manager.", "areaServed": {"@type": "Country", "name": "United Kingdom"}, "provider": {"@type": "ProfessionalService", "name": "Roadmap Consulting", "legalName": "Roadmap Consulting Ltd", "url": "https://roadmapconsulting.co.uk/"}, "offers": {"@type": "Offer", "name": "One-page TMS plan", "price": "0", "priceCurrency": "GBP"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are you part of Qargo?", "acceptedAnswer": {"@type": "Answer", "text": "No. Roadmap Consulting is an independent company. I used to work at Qargo, but I am not employed by, partnered with or endorsed by them."}}, {"@type": "Question", "name": "Will this get in the way of Qargo's own support?", "acceptedAnswer": {"@type": "Answer", "text": "No. Keep raising faults with Qargo as you do now. My work is about how your setup fits the way you operate, and how well your team knows it."}}, {"@type": "Question", "name": "We have only just gone live. Is it too early?", "acceptedAnswer": {"@type": "Answer", "text": "No. The first few months are when habits form. Putting the setup right now saves months of workarounds later."}}, {"@type": "Question", "name": "Do you only work with Qargo?", "acceptedAnswer": {"@type": "Answer", "text": "No. I help with any TMS project, from choosing a system to getting every depot live. Qargo is where I have the deepest knowledge."}}, {"@type": "Question", "name": "What does the one-page plan cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. A 30-minute chat, then a written plan you keep. If you want help with the work after that, we agree the scope and the price before anything starts."}}]}]}</script>
-<link rel="preload" href="/assets/fonts/barlow-semi-condensed-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/barlow-semi-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for AI assistants">
 <style>
-/* Paper ground, Brunswick green bars, roundabout R smooth route mark, golden triangle OS map behind the hero */
-:root {
+/* Direction A, built 24 Nov 2026 from the drafts canvas (Main.dc.html). Paper ground, Brunswick green bars, one yellow accent. */
+:root{
   color-scheme:light dark;
-  --bg:#f5f5f0; --surface:#ffffff; --fg:#17231c; --muted:#56625a; --line:#d8dcd3;
-  --accent:#1f6b45; --accent-text:#1f6b45; --accent-fill:#e3aa12; --on-accent:#123824;
-  --accent-soft:#fcefb4; --highlight:#e3aa12; --map-ink:#17231c21;
-  --em-text:#17231c; --em-mark:#e3aa12;
-  /* Green bars: header, contact band and footer */
-  --g-bg:#123824; --g-surface:#174429; --g-fg:#ffffff; --g-muted:#c9d8ce; --g-line:#2a5a3e; --g-accent:#e3aa12;
-  --mark-fg:#ffffff; --mark-accent:#e3aa12; --mark-tile:transparent;
+  --bg:#f5f5f0; --surface:#ffffff; --fg:#17231c; --fg-2:#2b3a31; --muted:#56625a; --line:#d8dcd3;
+  --head:#123824; --accent:#1f6b45; --accent-hover:#123824;
+  --yellow:#e3aa12; --yellow-hover:#f0b928; --on-yellow:#123824;
+  --g-bg:#123824; --g-surface:#174429; --g-fg:#ffffff; --g-muted:#c9d8ce; --g-line:#2a5a3e; --g-accent:#e3aa12; --foot:#0d2a1b;
+  --map-ink:#17231c21; --tab-on:#123824;
+  --shadow:0 1px 2px #12382414, 0 24px 48px -16px #12382447;
   --display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
   --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
   --mono:"IBM Plex Mono",Consolas,"Courier New",monospace;
-  --map:url("/assets/os-map.svg");
 }
-* { box-sizing:border-box; }
-body { background:var(--bg); color:var(--fg); font-family:var(--body); font-size:1.0625rem; line-height:1.6; margin:0; }
-.wrap { max-width:68rem; margin:0 auto; padding-inline:clamp(16px,4vw,40px); }
-a { color:var(--accent-text); text-underline-offset:3px; }
-a:focus-visible, button:focus-visible { outline:2px solid var(--accent-text); outline-offset:3px; }
-h1,h2,h3 { font-family:var(--display); line-height:1.1; text-wrap:balance; margin:0; }
-.label { font-family:var(--mono); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#123824; --surface:#174429; --fg:#ffffff; --fg-2:#e6eee8; --muted:#c9d8ce; --line:#2a5a3e;
+  --head:#ffffff; --accent:#f0b928; --accent-hover:#f7c948;
+  --g-bg:#0b2516; --g-surface:#123824; --g-line:#24503a; --foot:#071a0f;
+  --map-ink:#ffffff1f; --tab-on:#0b2516; --shadow:0 24px 48px -16px #00000080; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#123824; --surface:#174429; --fg:#ffffff; --fg-2:#e6eee8; --muted:#c9d8ce; --line:#2a5a3e;
+  --head:#ffffff; --accent:#f0b928; --accent-hover:#f7c948;
+  --g-bg:#0b2516; --g-surface:#123824; --g-line:#24503a; --foot:#071a0f;
+  --map-ink:#ffffff1f; --tab-on:#0b2516; --shadow:0 24px 48px -16px #00000080; color-scheme:dark; }
+:root[data-theme="light"]{ color-scheme:light; }
 
-header.site { border-bottom:1px solid var(--line); }
-.bar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; padding-block:18px; }
-.lockup { font-family:var(--display); font-weight:700; font-size:1.35rem; letter-spacing:.01em; color:var(--fg); text-decoration:none; display:flex; align-items:center; gap:10px; }
-.lockup svg { flex:none; width:40px; height:40px; background:var(--mark-tile); border-radius:6px; padding:3px; }
-.mk .mw { fill:var(--mark-fg); } .mk .my { fill:var(--mark-accent); } .lockup .rn { color:var(--accent-text); }
-nav { display:flex; flex-wrap:wrap; gap:6px 22px; }
-nav a { color:var(--fg); text-decoration:none; font-weight:600; font-size:.95rem; }
-nav a:hover { color:var(--accent-text); }
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--bg); color:var(--fg); font:400 17px/1.55 var(--body); }
+a{ color:var(--accent); text-underline-offset:3px; }
+a:hover{ color:var(--accent-hover); }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+h1,h2,h3{ font-family:var(--display); font-weight:700; color:var(--head); margin:0; text-wrap:balance; }
+p{ margin:0; }
+.wrap{ max-width:1200px; margin:0 auto; padding-inline:clamp(16px,4vw,40px); }
+.two{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:64px; align-items:center; }
+.skip{ position:absolute; left:-9999px; top:12px; z-index:100; background:#ffffff; color:#123824; padding:8px 14px; border-radius:6px; font-weight:600; }
+.skip:focus{ left:16px; }
+section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
 
-.hero { position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
-.hero .map { position:absolute; inset:0; background:var(--map-ink); -webkit-mask:var(--map) center/cover no-repeat; mask:var(--map) center/cover no-repeat; pointer-events:none; }
-.hero .inner { position:relative; padding-block:clamp(56px,10vw,120px) clamp(56px,8vw,96px); display:grid; gap:28px; }
-.hero h1 { font-size:clamp(2.4rem,6vw,4.25rem); font-weight:600; max-width:18ch; }
-.hero h1 em { font-style:normal; color:var(--em-text); background:linear-gradient(transparent 64%, var(--em-mark) 64%, var(--em-mark) 92%, transparent 92%); }
-.hero p { max-width:60ch; color:var(--muted); font-size:1.2rem; margin:0; }
-.hero p.note { font-size:.95rem; margin-top:-14px; }
-.hero p.proof { font-family:var(--mono); font-size:.8rem; letter-spacing:.04em; color:var(--muted); border-left:3px solid var(--highlight); padding-left:10px; }
-.credit { position:absolute; right:12px; bottom:10px; font-size:.75rem; line-height:1.3; color:var(--muted); background:var(--bg); padding:2px 6px; border-radius:4px; max-width:calc(100% - 24px); }
-.actions { display:flex; flex-wrap:wrap; gap:12px; }
-.btn { display:inline-flex; align-items:center; padding:12px 20px; border-radius:4px; font-weight:600; text-decoration:none; border:1px solid var(--accent-fill); line-height:1.2; }
-.btn.primary { background:var(--accent-fill); color:var(--on-accent); }
-.btn.secondary { color:var(--accent-text); background:transparent; border-color:var(--accent-text); }
-@media (prefers-reduced-motion:no-preference) { .btn { transition:filter .15s ease; } .btn:hover { filter:brightness(1.08); } }
+.btn{ display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:6px; border:0; font:600 17px/1.2 var(--body); text-align:center; text-decoration:none; cursor:pointer; }
+.btn-y{ background:var(--yellow); color:var(--on-yellow); }
+.btn-y:hover{ background:var(--yellow-hover); color:var(--on-yellow); }
+@media (prefers-reduced-motion:no-preference){ .btn{ transition:transform .16s ease-out, background-color .15s ease-out; } .btn:active{ transform:scale(.97); } }
 
-section.s { padding-block:clamp(40px,7vw,72px); border-bottom:1px solid var(--line); }
-.head { display:grid; gap:10px; margin-bottom:32px; }
-.head h2 { font-size:clamp(1.8rem,3.6vw,2.5rem); font-weight:600; }
-.head p { margin:0; color:var(--muted); max-width:62ch; }
-
-.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:20px; }
-.service { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:24px; display:grid; gap:10px; align-content:start; min-width:0; }
-.service h3 { font-size:1.4rem; font-weight:600; }
-.service p { margin:0; color:var(--muted); }
-.service ul { margin:0; padding-left:1.1rem; display:grid; gap:4px; }
-
-.route { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,8.5rem),1fr)); counter-reset:stop; }
-/* Route line: drawn per stop, only from a dot to the next dot on the same row (rows are worked out in script) */
-.route li.link { background:linear-gradient(var(--accent),var(--accent)) left top / 100% 3px no-repeat; }
-.route li { counter-increment:stop; padding:20px 20px 22px 0; display:grid; gap:6px; align-content:start; min-width:0; position:relative; }
-.route li::before { content:counter(stop,decimal-leading-zero); font-family:var(--mono); font-size:.8rem; color:var(--accent-text); font-weight:500; }
-.route li::after { content:""; position:absolute; top:-9px; left:0; width:15px; height:15px; border-radius:50%; background:var(--bg); border:3px solid var(--accent); }
-.route li:last-child::after { background:var(--highlight); }
-.route h3 { font-size:1.2rem; font-weight:600; }
-.route p { margin:0; color:var(--muted); font-size:.98rem; }
-.route p.get { color:var(--fg); font-weight:600; font-size:.9rem; margin-top:4px; }
-
-.about { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr)); gap:32px 48px; }
-.about p { margin:0 0 14px; max-width:62ch; }
-.facts { display:grid; margin:0; align-content:start; border-top:1px solid var(--line); }
-.fact { display:grid; grid-template-columns:minmax(6.5rem,9rem) 1fr; gap:12px; padding-block:12px; border-bottom:1px solid var(--line); }
-.fact dt { font-family:var(--mono); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
-.fact dd { margin:0; min-width:0; }
-
-.contact { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); gap:20px; }
-.channel { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:20px 22px; display:grid; gap:6px; min-width:0; }
-.channel .value { font-size:1.1rem; font-weight:600; overflow-wrap:anywhere; user-select:all; color:var(--fg); }
-.channel a.value { color:var(--accent-text); }
-
-footer { padding-block:28px 40px; color:var(--muted); font-size:.85rem; }
-footer .wrap { display:grid; gap:6px; }
-footer .mono { font-family:var(--mono); font-size:.78rem; }
-
-/* Green bars */
-header.site { background:var(--g-bg); border-bottom:4px solid var(--g-accent); }
-header.site .lockup { color:var(--g-fg); }
-header.site .lockup .rn { color:var(--g-accent); }
-header.site nav a { color:var(--g-fg); }
-header.site nav a:hover { color:var(--g-accent); }
-header.site a:focus-visible { outline-color:var(--g-accent); }
-.lockup svg { padding:0; width:64px; height:64px; }
-header.site .lockup { font-size:1.9rem; gap:14px; }
-header.site .bar { padding-block:16px; }
-@media (max-width:600px) { .lockup svg { width:52px; height:52px; } header.site .lockup { font-size:1.6rem; } }
-.band { background:var(--g-bg); color:var(--g-fg); border-bottom:0; }
-.band .label { color:var(--g-accent); }
-.band .head p { color:var(--g-muted); }
-.band .channel { background:var(--g-surface); border-color:var(--g-line); }
-.band .channel .value { color:var(--g-fg); }
-.band .channel a.value { color:var(--g-accent); }
-.band a:focus-visible { outline-color:var(--g-accent); }
-footer { background:var(--g-bg); color:var(--g-muted); border-top:1px solid var(--g-line); }
-.btn.secondary { color:var(--accent); border-color:var(--accent); }
-
-/* Dark mode: green ground, darker green bars. Follows the browser unless the visitor picks one */
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#123824; --surface:#174429; --fg:#ffffff; --muted:#c9d8ce; --line:#2a5a3e; --accent:#e3aa12; --accent-text:#f0b928; --accent-fill:#e3aa12; --on-accent:#123824; --accent-soft:#2b4a22; --highlight:#e3aa12; --map-ink:#ffffff1f; --em-text:#e3aa12; --em-mark:transparent; --g-bg:#0b2516; --g-surface:#123824; --g-line:#2a5a3e; color-scheme:dark; } }
-:root[data-theme="dark"] { --bg:#123824; --surface:#174429; --fg:#ffffff; --muted:#c9d8ce; --line:#2a5a3e; --accent:#e3aa12; --accent-text:#f0b928; --accent-fill:#e3aa12; --on-accent:#123824; --accent-soft:#2b4a22; --highlight:#e3aa12; --map-ink:#ffffff1f; --em-text:#e3aa12; --em-mark:transparent; --g-bg:#0b2516; --g-surface:#123824; --g-line:#2a5a3e; color-scheme:dark; }
-nav { align-items:center; }
-.btn.secondary { color:var(--accent-text); border-color:var(--accent-text); }
-
-/* Light/dark switch */
-.theme-switch { display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 4px; font:inherit; color:var(--g-muted); background:transparent; border:0; cursor:pointer; }
-.theme-switch svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none; }
-.theme-switch .i-sun { color:var(--g-accent); }
-.theme-switch[aria-checked="true"] .i-sun { color:var(--g-muted); }
-.theme-switch[aria-checked="true"] .i-moon { color:var(--g-accent); }
-.theme-switch .track { position:relative; width:46px; height:26px; border-radius:13px; background:#ffffff26; border:1px solid #ffffff66; flex:none; }
-.theme-switch .knob { position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:#ffffff; }
-.theme-switch[aria-checked="true"] .track { background:var(--g-accent); border-color:var(--g-accent); }
-.theme-switch[aria-checked="true"] .knob { transform:translateX(20px); background:#123824; }
-@media (prefers-reduced-motion:no-preference) { .theme-switch .knob { transition:transform .18s ease; } .theme-switch .track { transition:background .18s ease; } }
-.theme-switch:hover .track { border-color:var(--g-accent); }
-.theme-switch:focus-visible { outline:2px solid var(--g-accent); outline-offset:3px; border-radius:6px; }
-
-
-/* Click to reveal contact details (keeps them out of the page source as plain text) */
-.reveal { justify-self:start; font:inherit; font-size:1.05rem; font-weight:600; color:var(--g-accent); background:transparent; border:1px solid var(--g-accent); border-radius:4px; padding:8px 14px; min-height:44px; cursor:pointer; }
-.reveal:hover { background:var(--g-accent); color:#123824; }
-.reveal:focus-visible { outline:2px solid var(--g-accent); outline-offset:3px; }
-.band .channel a.value { color:var(--g-fg); text-decoration-color:var(--g-accent); }
-
-/* Credentials strip in the hero */
-.creds { list-style:none; margin:4px 0 0; padding:14px 0 0; border-top:1px solid var(--line); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap:12px 28px; max-width:62rem; }
-.creds li { font-size:.95rem; line-height:1.4; color:var(--fg); }
-.creds .k { display:block; font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-text); margin-bottom:3px; }
-.hero p.note a { font-weight:600; color:var(--accent-text); }
-footer a { color:var(--g-fg); text-decoration-color:var(--g-accent); }
-
-/* ---------- Motion layer: subtle, plays once, off for reduced motion and without JS ---------- */
-@media (min-width:760px) { html { scroll-padding-top:96px; } header.site { position:sticky; top:0; z-index:50; } }
-header.site .bar, header.site .lockup svg, header.site .lockup { transition:none; }
-header.site.compact .bar { padding-block:8px; }
-header.site.compact .lockup svg { width:44px; height:44px; }
-header.site.compact .lockup { font-size:1.5rem; }
-header.site.compact { box-shadow:0 2px 12px #0b251633; }
-/* Link underline that slides in */
-nav a { background:linear-gradient(currentColor,currentColor) left bottom / 0 2px no-repeat; padding-bottom:2px; }
-nav a:hover, nav a:focus-visible { background-size:100% 2px; }
-@media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior:smooth; }
-  header.site .bar { transition:padding .25s ease; }
-  header.site .lockup svg { transition:width .25s ease, height .25s ease; }
-  header.site .lockup { transition:font-size .25s ease; }
-  header.site { transition:box-shadow .25s ease; }
-  nav a { transition:background-size .2s ease, color .15s ease; }
-  .btn { transition:transform .18s ease, box-shadow .18s ease, filter .15s ease; }
-  .btn:hover { transform:translateY(-2px); box-shadow:0 6px 16px #12382426; }
-  .btn:active { transform:translateY(0); box-shadow:none; }
-  .service, .channel { transition:transform .2s ease, border-color .2s ease; }
-  .service:hover { transform:translateY(-3px); border-color:var(--accent); }
-  /* Sections fade up once */
-  .js .rv { opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; transition-delay:calc(var(--d,0) * 90ms); }
-  .js .rv.in { opacity:1; transform:none; }
-  /* Route line draws itself, stops appear in turn, ending on the yellow stop */
-  .js .route li.link { background-size:0 3px; transition:opacity .45s ease, transform .45s ease, background-size .5s ease; transition-delay:calc(var(--i,0) * 150ms + 150ms); }
-  .js .route.in li.link { background-size:100% 3px; }
-  .js .route li { opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease; transition-delay:calc(var(--i,0) * 150ms + 150ms); }
-  .js .route li::after { transform:scale(.4); transition:transform .35s cubic-bezier(.3,1.6,.5,1); transition-delay:calc(var(--i,0) * 150ms + 150ms); }
-  .js .route.in li { opacity:1; transform:none; }
-  .js .route.in li::after { transform:scale(1); }
-  /* Map drifts slightly slower than the page */
-  .js .hero .map { top:-180px; will-change:transform; }
-}
-
-/* Header, 1 Oct 2026: no yellow rule, single-colour name, switch in footer, one-row phone header */
-header.site { border-bottom:0; }
-header.site .lockup .rn { color:var(--g-fg); }
-.hero .label { text-transform:none; letter-spacing:.02em; }
-.foot-theme { margin-top:6px; }
-.foot-theme .theme-switch { padding:0; min-height:36px; }
-@media (max-width:600px) {
-  header.site .bar { flex-wrap:nowrap; }
-  header.site nav a:not([href="#contact"]) { display:none; }
-  header.site .lockup { font-size:1.35rem; gap:10px; }
-  header.site .lockup svg { width:40px; height:40px; }
-}
-/* Road texture in the header, faded behind the logo */
-header.site { isolation:isolate; overflow:hidden; }
-@media (max-width:759px){ header.site { position:relative; } }
-header.site::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:#ffffff30;
+/* Header */
+.site{ background:var(--g-bg); color:var(--g-fg); position:sticky; top:0; z-index:50; }
+.site .bar{ display:flex; align-items:center; justify-content:space-between; gap:24px; height:72px; position:relative; }
+/* Road texture behind the header, faded in from behind the logo (as on the old home page and /qargo/) */
+.head-map{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+.head-map::before{ content:""; position:absolute; inset:0; background:#ffffff30;
   --fade:linear-gradient(90deg, transparent 0%, transparent 18%, #000 46%);
-  -webkit-mask-image:var(--map), var(--fade); -webkit-mask-size:cover, 100% 100%; -webkit-mask-position:center 38%, 0 0; -webkit-mask-repeat:no-repeat; -webkit-mask-composite:source-in;
-  mask-image:var(--map), var(--fade); mask-size:cover, 100% 100%; mask-position:center 38%, 0 0; mask-repeat:no-repeat; mask-composite:intersect; }
-@media (max-width:700px){ header.site::before { --fade:linear-gradient(90deg, transparent 0%, transparent 30%, #000 75%); } }
-/* Header button and phone menu, as on the home page (Nick's D1b, 24 Nov 2026) */
-header.site { overflow:visible; }
-header.site .wrap { max-width:1200px; }
-header.site .bar { flex-wrap:nowrap; }
-header.site nav { flex-wrap:nowrap; white-space:nowrap; }
-header.site nav .nav-cta { display:none; }
-.head-right { display:flex; align-items:center; gap:12px; flex:none; }
-header.site .head-cta { min-height:44px; padding:10px 18px; white-space:nowrap; border-radius:6px; }
-.menu-btn { display:none; width:44px; height:44px; align-items:center; justify-content:center; background:transparent; border:0; border-radius:6px; color:var(--g-fg); cursor:pointer; }
-.menu-btn svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; }
-.menu-btn .i-close { display:none; }
-header.site.open .menu-btn .i-open { display:none; } header.site.open .menu-btn .i-close { display:block; }
-.menu-btn:focus-visible { outline:2px solid var(--g-accent); outline-offset:3px; }
-@media (max-width:1180px) {
-  .menu-btn { display:inline-flex; }
-  header.site nav { display:none; position:absolute; left:0; right:0; top:100%; z-index:60; flex-direction:column; align-items:stretch; gap:0; padding:8px clamp(16px,4vw,40px) 20px; background:var(--g-bg); border-top:1px solid var(--g-line); box-shadow:0 12px 24px #0b25164d; }
-  header.site.open nav { display:flex; }
-  header.site.open nav a { display:block; padding:14px 0; border-bottom:1px solid var(--g-line); background:none; font-size:1.1rem; }
-  header.site.open nav .nav-cta { display:flex; justify-content:center; margin-top:16px; border-bottom:0; padding:12px 20px; background:var(--accent-fill); color:var(--on-accent); }
+  -webkit-mask-image:url("/assets/os-map.svg"), var(--fade); -webkit-mask-size:cover, 100% 100%; -webkit-mask-position:center 38%, 0 0; -webkit-mask-repeat:no-repeat; -webkit-mask-composite:source-in;
+  mask-image:url("/assets/os-map.svg"), var(--fade); mask-size:cover, 100% 100%; mask-position:center 38%, 0 0; mask-repeat:no-repeat; mask-composite:intersect; }
+@media (max-width:700px){ .head-map::before{ --fade:linear-gradient(90deg, transparent 0%, transparent 30%, #000 75%); } }
+.lockup{ display:flex; align-items:center; gap:12px; color:var(--g-fg); text-decoration:none; font:700 24px/1 var(--display); white-space:nowrap; }
+.lockup:hover{ color:var(--g-fg); }
+.lockup svg{ width:40px; height:40px; flex:none; }
+.mk .mw{ fill:#ffffff; } .mk .my{ fill:#e3aa12; }
+.nav{ display:flex; align-items:center; gap:22px; white-space:nowrap; }
+.nav a{ color:var(--g-fg); text-decoration:none; font-weight:600; font-size:16px; padding-block:6px; background:linear-gradient(currentColor,currentColor) left bottom / 0 2px no-repeat; }
+.nav a:hover, .nav a:focus-visible{ color:var(--g-fg); background-size:100% 2px; }
+.nav .nav-cta{ display:none; }
+.site .btn{ min-height:44px; font-size:16px; padding:0 18px; }
+.site :focus-visible{ outline-color:var(--g-accent); }
+.head-right{ display:flex; align-items:center; gap:12px; }
+.menu-btn{ display:none; width:44px; height:44px; align-items:center; justify-content:center; background:transparent; border:0; border-radius:6px; color:var(--g-fg); cursor:pointer; }
+.menu-btn svg{ width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; }
+.menu-btn .i-close{ display:none; }
+.site.open .menu-btn .i-open{ display:none; } .site.open .menu-btn .i-close{ display:block; }
+@media (prefers-reduced-motion:no-preference){ .nav a{ transition:background-size .2s ease-out; } }
+@media (max-width:1180px){
+  .menu-btn{ display:inline-flex; }
+  .nav{ display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:0; padding:8px clamp(16px,4vw,40px) 20px; background:var(--g-bg); border-top:1px solid var(--g-line); box-shadow:0 12px 24px #0b25164d; }
+  .site.open .nav{ display:flex; }
+  .nav a{ padding:14px 0; border-bottom:1px solid var(--g-line); background:none; font-size:18px; }
+  .nav .nav-cta{ display:flex; margin-top:16px; border:0; padding:0 22px; background:var(--yellow); color:var(--on-yellow); }
+  .nav .nav-cta:hover{ background:var(--yellow-hover); color:var(--on-yellow); }
 }
-@media (max-width:600px) { .head-right .head-cta { display:none; } }
+@media (max-width:600px){ .head-right .btn{ display:none; } .lockup{ font-size:21px; gap:10px; } .lockup svg{ width:36px; height:36px; } .site .bar{ height:64px; } }
+/* Header, Qargo-page style (Nick's D1b, 24 Nov 2026): larger logo, tucks in once you scroll */
+.site .bar{ height:auto; padding-block:16px; }
+.lockup{ font-size:1.9rem; gap:14px; }
+.lockup svg{ width:64px; height:64px; }
+@media (min-width:601px){
+  .site.compact .bar{ padding-block:8px; }
+  .site.compact .lockup{ font-size:1.5rem; }
+  .site.compact .lockup svg{ width:44px; height:44px; }
+}
+.site.compact{ box-shadow:0 2px 12px #0b251633; }
+@media (prefers-reduced-motion:no-preference){ .site .bar{ transition:padding .25s ease-out; } .lockup{ transition:font-size .25s ease-out; } .lockup svg{ transition:width .25s ease-out, height .25s ease-out; } .site{ transition:box-shadow .25s ease-out; } }
+@media (max-width:600px){ .site .bar{ padding-block:16px; } .lockup{ font-size:1.35rem; gap:10px; } .lockup svg{ width:40px; height:40px; } }
 
-/* Qargo page additions */
-.checks { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr)); gap:14px 28px; }
-.checks li { position:relative; padding:14px 0 14px 34px; border-top:1px solid var(--line); max-width:46ch; }
-.checks li::before { content:""; position:absolute; left:2px; top:20px; width:14px; height:14px; border-radius:50%; border:3px solid var(--accent); background:var(--bg); }
-.after { margin:22px 0 0; color:var(--muted); max-width:62ch; }
-.faq { display:grid; gap:0; border-top:1px solid var(--line); max-width:52rem; }
-.faq details { border-bottom:1px solid var(--line); }
-.faq summary { cursor:pointer; list-style:none; padding:16px 36px 16px 0; font-family:var(--display); font-weight:600; font-size:1.25rem; position:relative; }
-.faq summary::-webkit-details-marker { display:none; }
-.faq summary::after { content:"+"; position:absolute; right:4px; top:12px; font-family:var(--mono); font-size:1.3rem; color:var(--accent-text); }
-.faq details[open] summary::after { content:"\2212"; }
-.faq summary:focus-visible { outline:2px solid var(--accent-text); outline-offset:3px; }
-.faq details p { margin:0 0 18px; color:var(--muted); max-width:62ch; }
-.hero h1 { max-width:20ch; }
-.services { grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr)); }
+/* Map behind the hero and the method band */
+.map{ position:absolute; pointer-events:none; background:var(--map-ink); -webkit-mask:url("/assets/os-map.svg") center / cover no-repeat; mask:url("/assets/os-map.svg") center / cover no-repeat; }
+
+/* Hero */
+.hero{ position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+.hero .map{ inset:0; }
+.hero .two{ position:relative; padding-block:clamp(28px,3.5vw,48px) clamp(48px,7vw,80px); align-items:start; }
+.eyebrow{ margin:0 0 20px; font-weight:600; color:var(--accent); }
+.hero h1{ font-size:clamp(40px,5vw,64px); line-height:1.04; letter-spacing:-.01em; }
+.lead{ margin-top:24px; font-size:20px; line-height:1.5; max-width:560px; color:var(--fg-2); }
+.actions{ display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; margin-top:32px; }
+.actions .text-link{ font-weight:600; }
+.terms{ margin:20px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:8px 24px; font-size:15px; color:var(--muted); }
+
+/* Paper artefacts: the sample plan and the parallel run stay paper in both themes */
+.paper{ --fg:#17231c; --muted:#56625a; --line:#d8dcd3; --head:#123824; --accent:#1f6b45; --accent-hover:#123824; background:#ffffff; color:var(--fg); border-radius:10px; overflow:hidden; }
+.plan figure, figure.plan{ margin:0; }
+.plan .paper{ box-shadow:var(--shadow); }
+.paper-bar{ background:var(--g-bg); color:#ffffff; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.paper-bar b{ font:700 18px/1 var(--display); }
+.paper-bar span{ font-size:13px; color:#c9d8ce; }
+.plan-body{ padding:24px 24px 8px; }
+.plan-title{ font:700 26px/1.15 var(--display); color:#123824; }
+.plan dl{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:16px 0 0; font-size:14px; line-height:1.4; }
+.plan dt{ color:var(--muted); } .plan dd{ margin:0; font-weight:600; }
+.rec{ margin-top:18px; padding:14px 16px; background:#fcefb4; border-radius:6px; font-size:15px; line-height:1.45; }
+.rec strong{ display:block; font-size:13px; color:#123824; margin-bottom:2px; }
+.k{ margin:18px 0 8px; font-size:13px; font-weight:600; color:var(--muted); }
+.risk{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; padding:12px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-size:14px; line-height:1.4; }
+.chip{ align-self:start; padding:2px 10px; border-radius:999px; background:#f6e0d6; color:#7a2e12; font-weight:600; font-size:13px; }
+.steps{ list-style:none; margin:0 0 16px; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; font-size:13px; line-height:1.35; }
+.steps li{ border-top:3px solid #e3aa12; padding-top:8px; }
+.steps li:last-child{ border-top-color:#1f6b45; }
+.steps span{ color:var(--muted); display:block; }
+.plan figcaption{ margin-top:12px; font-size:14px; color:var(--muted); }
+@media (max-width:560px){
+  .plan-body{ padding:18px 16px 6px; } .paper-bar{ padding:12px 16px; }
+  .plan dl{ grid-template-columns:minmax(0,1fr); gap:6px; }
+  .plan dl div{ display:grid; grid-template-columns:96px minmax(0,1fr); gap:8px; }
+  .steps{ grid-template-columns:minmax(0,1fr); gap:10px; font-size:14px; }
+  .steps li{ border-top:0; border-left:3px solid #e3aa12; padding:0 0 0 10px; display:grid; grid-template-columns:96px minmax(0,1fr); }
+  .steps li:last-child{ border-left-color:#1f6b45; }
+}
+
+/* Credentials strip */
+.creds{ background:var(--surface); border-bottom:1px solid var(--line); }
+.creds ul{ list-style:none; margin:0 auto; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px 32px; padding-block:32px; font-size:15px; line-height:1.45; }
+.creds strong{ display:block; color:var(--head); font-size:16px; }
+.creds span{ color:var(--muted); }
+
+/* What I take on */
+.work{ padding-block:clamp(56px,9vw,96px); }
+.work .two{ align-items:start; }
+.work .intro{ margin-top:20px; font-size:19px; max-width:520px; }
+.stat{ margin-top:32px; padding-top:20px; border-top:1px solid var(--line); font-size:15px; color:var(--muted); max-width:520px; }
+.stat strong{ display:block; font:700 36px/1 var(--display); color:var(--head); margin-bottom:6px; font-variant-numeric:tabular-nums; }
+.four-parts{ list-style:none; margin:0; padding:0; }
+.four-parts li{ display:grid; grid-template-columns:56px minmax(0,1fr); gap:16px; padding:22px 0; border-top:1px solid var(--line); }
+.four-parts li:last-child{ border-bottom:1px solid var(--line); }
+.four-parts .n{ font:700 28px/1 var(--display); color:var(--accent); font-variant-numeric:tabular-nums; }
+.four-parts strong{ display:block; font-size:19px; }
+
+/* How a depot goes live */
+.method{ background:var(--g-bg); color:var(--g-fg); padding-block:clamp(56px,9vw,96px); position:relative; overflow:hidden; }
+.method .map{ inset:0; background:#ffffff14; }
+.method .wrap{ position:relative; }
+.method h2, .method h3{ color:var(--g-fg); }
+.method .intro{ margin:16px 0 48px; font-size:19px; color:var(--g-muted); max-width:640px; }
+.route{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:16px; }
+.route li{ position:relative; }
+.route li::before{ content:""; position:absolute; top:7px; left:9px; width:calc(100% + 16px); height:4px; background:var(--g-accent); border-radius:2px; transform-origin:left center; }
+.route li:last-child::before{ display:none; }
+.dot{ position:relative; z-index:1; display:block; width:18px; height:18px; border-radius:50%; background:var(--g-bg); border:4px solid var(--g-accent); margin-bottom:20px; }
+.route li:last-child .dot{ background:var(--g-accent); }
+.route h3{ font-size:22px; line-height:1.1; }
+.route .desc{ display:block; margin-top:8px; font-size:15px; color:var(--g-muted); }
+.keep{ display:block; margin-top:14px; padding:10px 12px; background:var(--g-surface); border-radius:6px; font-size:14px; line-height:1.35; }
+@media (max-width:1100px){
+  .route{ grid-template-columns:minmax(0,1fr); gap:0; }
+  .route li{ display:grid; grid-template-columns:18px minmax(0,1fr) minmax(0,260px); column-gap:20px; padding-bottom:28px; }
+  .route li:last-child{ padding-bottom:0; }
+  .route li::before{ top:9px; left:7px; width:4px; height:100%; transform-origin:center top; }
+  .dot{ grid-row:1 / span 2; margin:2px 0 0; }
+  .route h3, .route .desc{ grid-column:2; }
+  .route .desc{ margin-top:6px; }
+  .route .keep{ grid-column:3; grid-row:1 / span 2; margin-top:0; align-self:start; }
+}
+@media (max-width:640px){
+  .route li{ grid-template-columns:18px minmax(0,1fr); column-gap:16px; }
+  .route .keep{ grid-column:2; grid-row:auto; margin-top:12px; }
+}
+.parallel{ margin-top:64px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:48px; align-items:center; }
+.parallel h3{ font-size:30px; line-height:1.1; }
+.parallel p{ margin-top:14px; color:var(--g-muted); }
+.parallel figure{ margin:0; }
+.pr-head{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:14px 20px; border-bottom:1px solid var(--line); font-size:14px; }
+.pr-head span{ color:var(--muted); }
+.pr-nums{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); padding:18px 20px; gap:16px; }
+.pr-nums div{ display:flex; flex-direction:column; justify-content:space-between; }
+.pr-nums span{ font-size:13px; color:var(--muted); }
+.pr-nums strong{ display:block; font:700 32px/1.1 var(--display); font-variant-numeric:tabular-nums; }
+.pr-nums .ok{ color:#1f6b45; } .pr-nums .bad{ color:#7a2e12; }
+.tablewrap{ overflow-x:auto; }
+.paper table{ width:100%; border-collapse:collapse; font-size:14px; font-variant-numeric:tabular-nums; }
+.paper th{ background:#f5f5f0; text-align:left; font-weight:600; padding:8px; }
+.paper td{ padding:8px; border-top:1px solid var(--line); }
+.paper th:first-child, .paper td:first-child{ padding-left:20px; } .paper th:last-child, .paper td:last-child{ padding-right:20px; }
+
+/* Roles */
+.roles-s{ padding-block:clamp(56px,9vw,96px); }
+.roles-s h2{ margin-bottom:40px; }
+.roles{ display:grid; grid-template-columns:minmax(0,280px) minmax(0,1fr); gap:48px; }
+.tablist{ display:flex; flex-direction:column; gap:4px; }
+.tab{ font:600 17px/1.3 var(--body); text-align:left; padding:14px 16px; border-radius:6px; border:0; background:transparent; color:var(--fg); cursor:pointer; }
+.tab:hover{ background:var(--surface); }
+.tab[aria-selected="true"]{ background:var(--tab-on); color:#ffffff; }
+.no-js .tablist{ display:none; }
+.panel{ background:var(--surface); border-radius:10px; padding:36px 40px; box-shadow:0 1px 2px #12382414; }
+.panel + .panel{ margin-top:16px; }
+.panel .k{ margin:0; font-size:15px; }
+.panel .k2{ margin:28px 0 10px; }
+.fear{ margin-top:6px; font:700 30px/1.15 var(--display); color:var(--head); }
+.panel ul{ margin:0; padding-left:20px; font-size:18px; display:grid; gap:8px; }
+.panel a{ display:inline-block; margin-top:28px; font-weight:600; }
+@media (max-width:900px){ .tablist{ flex-direction:row; flex-wrap:wrap; } .tab{ padding:10px 14px; } }
+@media (max-width:560px){ .panel{ padding:24px 20px; } .fear{ font-size:26px; } .panel ul{ font-size:17px; } }
+
+/* About */
+.about{ background:var(--surface); border-block:1px solid var(--line); padding-block:clamp(56px,9vw,96px); }
+.about .two{ align-items:start; }
+.about h2{ font-size:40px; }
+.about .role{ margin-top:4px; color:var(--muted); }
+.about .bio p{ margin-top:14px; max-width:62ch; }
+.about .bio p.first{ margin-top:20px; }
+.basics h3{ font-size:26px; line-height:1.1; margin-bottom:16px; }
+.basics ul{ margin:0; padding:0; list-style:none; font-size:16px; }
+.basics li{ padding:14px 0; border-top:1px solid var(--line); }
+.basics li:last-child{ border-bottom:1px solid var(--line); }
+
+/* Contact */
+.contact{ background:var(--g-bg); color:var(--g-fg); padding-block:clamp(56px,9vw,96px); }
+.contact .two{ align-items:start; }
+.contact h2{ color:var(--g-fg); }
+.contact p{ color:var(--g-muted); }
+.contact .intro{ margin-top:20px; font-size:19px; }
+.contact .also{ margin-top:14px; }
+.contact :focus-visible{ outline-color:var(--g-accent); }
+.reach{ display:flex; flex-direction:column; gap:16px; }
+.reach .btn-y{ min-height:56px; font-size:19px; }
+.reveals{ display:flex; flex-wrap:wrap; gap:16px; }
+.reveals > *{ flex:1 1 13rem; }
+.reveal, .reveals .value{ display:flex; align-items:center; justify-content:center; min-height:48px; padding:0 12px; border:1px solid #ffffff66; border-radius:6px; background:transparent; color:var(--g-fg); font:600 17px/1.2 var(--body); text-align:center; cursor:pointer; overflow-wrap:anywhere; }
+.reveal:hover{ border-color:var(--g-accent); }
+.reveals .value{ text-decoration:underline; text-decoration-color:var(--g-accent); cursor:auto; white-space:nowrap; overflow-wrap:normal; }
+.reach .who{ font-size:15px; }
+@media (max-width:340px){ .reveals .value{ white-space:normal; overflow-wrap:anywhere; } }
+
+/* Footer */
+footer{ background:var(--foot); color:var(--g-muted); padding:56px 0 40px; font-size:14px; }
+footer .cols{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+footer a{ color:var(--g-muted); display:block; padding-block:3px; text-decoration-color:#ffffff40; }
+footer a:hover{ color:#ffffff; }
+footer :focus-visible{ outline-color:var(--g-accent); }
+footer .col-h{ color:#ffffff; display:block; margin-bottom:8px; font-weight:600; }
+footer .brand svg{ width:44px; height:44px; }
+footer .brand p{ margin-top:12px; }
+footer .legal{ margin-top:40px; padding-top:20px; border-top:1px solid var(--g-line); display:grid; gap:4px; }
+footer .mono{ font-family:var(--mono); font-size:13px; }
+@media (max-width:900px){ footer .cols{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* Light and dark switch (footer) */
+.theme-switch{ display:inline-flex; align-items:center; gap:8px; min-height:36px; margin-top:12px; padding:0; font:inherit; color:var(--g-muted); background:transparent; border:0; cursor:pointer; }
+.theme-switch svg{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.theme-switch .i-sun{ color:var(--g-accent); }
+.theme-switch[aria-checked="true"] .i-sun{ color:var(--g-muted); }
+.theme-switch[aria-checked="true"] .i-moon{ color:var(--g-accent); }
+.theme-switch .track{ position:relative; width:46px; height:26px; border-radius:13px; background:#ffffff26; border:1px solid #ffffff66; flex:none; }
+.theme-switch .knob{ position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:#ffffff; }
+.theme-switch[aria-checked="true"] .track{ background:var(--g-accent); border-color:var(--g-accent); }
+.theme-switch[aria-checked="true"] .knob{ transform:translateX(20px); background:#123824; }
+@media (prefers-reduced-motion:no-preference){ .theme-switch .knob{ transition:transform .18s ease-out; } .theme-switch .track{ transition:background-color .18s ease-out; } }
+
+/* Shared breakpoints */
+@media (max-width:900px){
+  .two{ grid-template-columns:minmax(0,1fr); gap:40px; }
+  .creds ul{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .roles{ grid-template-columns:minmax(0,1fr); gap:20px; }
+  .parallel{ grid-template-columns:minmax(0,1fr); gap:28px; }
+}
+@media (max-width:560px){ .creds ul{ grid-template-columns:minmax(0,1fr); gap:16px; padding-block:24px; } .lead{ font-size:18px; } .work .intro, .method .intro, .contact .intro{ font-size:18px; } }
+
+/* Motion: plays once on scroll, transform and opacity only, off for reduced motion and without script */
+html{ scroll-padding-top:80px; }
+@media (prefers-reduced-motion:no-preference){
+  html{ scroll-behavior:smooth; }
+  .js .rv{ opacity:0; transform:translateY(14px); transition:opacity .5s ease-out, transform .5s ease-out; transition-delay:calc(var(--d,0) * 80ms); }
+  .js .rv.in{ opacity:1; transform:none; }
+  /* Hero map drifts slightly slower than the page, as on /qargo/ */
+  .js .hero .map{ top:-180px; will-change:transform; }
+  .js .route li::before{ transform:scaleX(0); transition:transform .28s ease-out; transition-delay:calc(var(--i,0) * 140ms + 200ms); }
+  .js .route.in li::before{ transform:none; }
+  .js .route .dot{ opacity:0; transform:scale(.6); transition:opacity .2s ease-out, transform .2s ease-out; transition-delay:calc(var(--i,0) * 140ms + 120ms); }
+  .js .route.in .dot{ opacity:1; transform:none; }
+  @media (max-width:1100px){ .js .route li::before{ transform:scaleY(0); } }
+}
+
+/* Qargo page in direction A (Nick's D2b, 24 Nov 2026). Everything above is shared with the home page. */
+section .eyebrow{ margin-bottom:14px; }
+.method .eyebrow, .contact .eyebrow{ color:var(--g-accent); }
+.hero .note{ margin-top:20px; font-size:15px; line-height:1.5; color:var(--muted); max-width:560px; }
+.hc-list{ list-style:none; margin:0 0 16px; padding:0; }
+.hc-list li{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:start; padding:11px 0; border-top:1px solid var(--line); font-size:14px; line-height:1.4; }
+.hc-list li:last-child{ border-bottom:1px solid var(--line); }
+.chip.med{ background:#fcefb4; color:#5c4300; }
+.chip.low{ background:#e2efe6; color:#1f4d33; }
+.signs li{ align-items:baseline; }
+.signs li > span:last-child{ font-size:18px; line-height:1.5; }
+.services-s{ background:var(--surface); border-block:1px solid var(--line); padding-block:clamp(56px,9vw,96px); }
+.services-s h2{ max-width:22ch; }
+.services{ margin-top:40px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.service{ background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:32px 32px 28px; }
+.service h3{ font-size:26px; line-height:1.1; }
+.service p{ margin-top:10px; color:var(--fg-2); }
+.service ul{ margin:18px 0 0; padding:16px 0 0 20px; border-top:1px solid var(--line); display:grid; gap:6px; font-size:16px; }
+.services-s .after{ margin-top:32px; font-size:18px; max-width:62ch; color:var(--fg-2); }
+.method .r4{ margin-top:48px; }
+@media (min-width:1101px){
+  .route.r4{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; }
+  .route.r4 li::before{ width:calc(100% + 32px); }
+}
+.facts{ margin:0; font-size:16px; }
+.facts div{ display:grid; grid-template-columns:120px minmax(0,1fr); gap:16px; padding:14px 0; border-top:1px solid var(--line); }
+.facts div:last-child{ border-bottom:1px solid var(--line); }
+.facts dt{ color:var(--muted); }
+.facts dd{ margin:0; font-weight:600; }
+.faq-s{ padding-block:clamp(56px,9vw,96px); }
+.faq-s .two{ grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr); align-items:start; }
+.faq details{ border-top:1px solid var(--line); }
+.faq details:last-child{ border-bottom:1px solid var(--line); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:20px 0; font:700 22px/1.25 var(--display); color:var(--head); }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:"+"; flex:none; font:600 26px/1 var(--body); color:var(--accent); }
+.faq details[open] summary::after{ content:"\2212"; }
+.faq details p{ padding:0 0 22px; max-width:62ch; color:var(--fg-2); }
+.contact .also a{ color:var(--g-accent); }
+.contact .also a:hover{ color:#ffffff; }
+@media (max-width:900px){ .services{ grid-template-columns:minmax(0,1fr); } .faq-s .two{ grid-template-columns:minmax(0,1fr); gap:24px; } }
+@media (max-width:560px){ .service{ padding:24px 20px; } .facts div{ grid-template-columns:96px minmax(0,1fr); gap:12px; } .faq summary{ font-size:20px; } }
 </style>
 </head>
-<body>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site">
+  <div class="head-map" aria-hidden="true"></div>
   <div class="wrap bar">
     <a class="lockup" href="/" aria-label="Roadmap Consulting, home">
       <svg class="mk" viewBox="-4 -4 72 72" aria-hidden="true"><path class="mw" d="M16.437532424926758 13.102725982666016 16.451662063598633 13.11428451538086Q16.571985244750977 13.212703704833984 16.6960391998291 13.306377410888672L16.999923706054688 13.535835266113281Q17.118545532226562 13.625404357910156 17.24040985107422 13.710505485534668L17.55898094177246 13.932968139648438Q17.675695419311523 14.014471054077148 17.795236587524414 14.09177017211914L18.128067016601562 14.306991577148438Q18.242799758911133 14.381181716918945 18.35999870300293 14.451412200927734L18.706663131713867 14.659144401550293Q18.819358825683594 14.726675033569336 18.9342098236084 14.790468215942383L19.294279098510742 14.99046516418457Q19.40497589111328 15.051952362060547 19.51756477355957 15.109903335571289L19.890613555908203 15.301921844482422Q19.999372482299805 15.357902526855469 20.10979461669922 15.41053295135498L20.495397567749023 15.594324111938477Q20.602294921875 15.645275115966797 20.71065330505371 15.693038940429688L21.108381271362305 15.868358612060547Q21.213552474975586 15.914718627929688 21.320011138916016 15.958037376403809L21.729442596435547 16.124637603759766Q21.832977294921875 16.166765213012695 21.937646865844727 16.20598602294922L22.358348846435547 16.36362075805664Q22.460399627685547 16.40185546875 22.563451766967773 16.437301635742188L22.9950008392334 16.585723876953125Q23.0957088470459 16.620361328125 23.197301864624023 16.652305603027344L23.639272689819336 16.791271209716797Q23.738752365112305 16.82254981994629 23.839012145996094 16.851224899291992L24.290977478027344 16.98048973083496Q24.389387130737305 17.008634567260742 24.48848533630371 17.03425407409668L24.950016021728516 17.153568267822266Q25.047489166259766 17.178768157958984 25.145565032958984 17.20150375366211L25.61623764038086 17.310625076293945Q25.712900161743164 17.33303451538086 25.810089111328125 17.35304069519043L25.91168212890625 17.373952865600586L25.73912239074707 17.535572052001953L25.526443481445312 17.74856185913086L25.32099151611328 17.96855926513672L25.12300682067871 18.195314407348633L24.932697296142578 18.428586959838867L24.750320434570312 18.668062210083008L24.57601547241211 18.91356086730957L24.410076141357422 19.16466522216797L24.25261688232422 19.421194076538086L24.10378646850586 19.682918548583984L23.963804244995117 19.949447631835938L23.83283233642578 20.220478057861328L23.710994720458984 20.495746612548828L23.598434448242188 20.774925231933594L23.495262145996094 21.057748794555664L23.401615142822266 21.34383773803711L23.317598342895508 21.63286781311035L23.24327278137207 21.92464256286621L23.178762435913086 22.218656539916992L23.124116897583008 22.514698028564453L23.079408645629883 22.81237030029297L23.044679641723633 23.111373901367188L23.019968032836914 23.411418914794922L23.005306243896484 23.712081909179688L23.000709533691406 24.013072967529297L23.006181716918945 24.314096450805664L23.021713256835938 24.614643096923828L23.04730224609375 24.914653778076172L23.082902908325195 25.213577270507812L23.128477096557617 25.511119842529297L23.18398094177246 25.80699348449707L23.249338150024414 26.100788116455078L23.32452392578125 26.39238929748535L23.409379959106445 26.681171417236328L23.503860473632812 26.96699333190918L23.60784149169922 27.24947738647461L23.721223831176758 27.528356552124023L23.8438720703125 27.803287506103516L23.97560691833496 28.073884963989258L24.11638832092285 28.340055465698242L24.26593780517578 28.601272583007812L24.424137115478516 28.857336044311523L24.590856552124023 29.108034133911133L24.765859603881836 29.353002548217773L24.94892692565918 29.59193992614746L25.139896392822266 29.82463836669922L25.338552474975586 30.05082893371582L25.544649124145508 30.270235061645508L25.75797462463379 30.482633590698242L25.978282928466797 30.687772750854492L26.205341339111328 30.88544273376465L26.438884735107422 31.075407028198242L26.678665161132812 31.257465362548828L26.924306869506836 31.43133544921875L27.175762176513672 31.596982955932617L27.432476043701172 31.75404167175293L27.694412231445312 31.90248680114746L27.961145401000977 32.04207992553711L28.232391357421875 32.172672271728516L28.50775718688965 32.29407501220703L28.78719711303711 32.40626525878906L29.070110321044922 32.509002685546875L29.356342315673828 32.602237701416016L29.645565032958984 32.68585205078125L29.93729019165039 32.75971603393555L30.231531143188477 32.823829650878906L30.527544021606445 32.878021240234375L30.82544708251953 32.922325134277344L31.12436294555664 32.956600189208984L31.424467086791992 32.98087692260742L31.72517967224121 32.99510192871094L32.02623748779297 32.99925994873047L32.327064514160156 32.99335479736328L32.53983688354492 32.98204803466797Q32.52953338623047 33.0055046081543 32.51935577392578 33.02907180786133L32.46458435058594 33.15593338012695Q32.40798568725586 33.287025451660156 32.356101989746094 33.42005157470703L32.306068420410156 33.548336029052734Q32.25411605834961 33.681541442871094 32.20695877075195 33.8165168762207L32.16167068481445 33.946136474609375Q32.11437225341797 34.081504821777344 32.071956634521484 34.21848678588867L32.031436920166016 34.349342346191406Q31.988967895507812 34.48649597167969 31.951446533203125 34.625083923339844L31.91571044921875 34.757080078125Q31.878129959106445 34.8958854675293 31.845561981201172 35.035953521728516L31.81462860107422 35.16899490356445Q31.782079696655273 35.308982849121094 31.754581451416016 35.45005416870117L31.72846221923828 35.584041595458984Q31.700918197631836 35.7253303527832 31.678476333618164 35.867523193359375L31.657194137573242 36.00236511230469Q31.634784698486328 36.14435577392578 31.617488861083984 36.28705596923828L31.601055145263672 36.42265319824219Q31.583765029907227 36.56532287597656 31.571609497070312 36.708526611328125L31.560043334960938 36.844783782958984Q31.547895431518555 36.98788833618164 31.540891647338867 37.1313362121582L31.534212112426758 37.268157958984375Q31.527217864990234 37.41144943237305 31.52536392211914 37.55489730834961L31.523590087890625 37.69218826293945Q31.521743774414062 37.83507537841797 31.525001525878906 37.977935791015625L31.528141021728516 38.1156005859375Q31.53139877319336 38.25839614868164 31.539751052856445 38.40098571777344L31.547828674316406 38.53892517089844Q31.556148529052734 38.680946350097656 31.56951141357422 38.82257843017578L31.582542419433594 38.960697174072266Q31.595853805541992 39.10179138183594 31.614154815673828 39.24232864379883L31.632152557373047 39.38053512573242Q31.650407791137695 39.520729064941406 31.673606872558594 39.660186767578125L31.69659423828125 39.798377990722656Q31.719684600830078 39.93717575073242 31.747638702392578 40.075077056884766L31.775630950927734 40.21316146850586Q31.80342674255371 40.35028076171875 31.83599853515625 40.4863395690918L31.869007110595703 40.62421798706055Q31.901466369628906 40.759803771972656 31.938631057739258 40.89417266845703L31.976682662963867 41.03175354003906Q32.013572692871094 41.165138244628906 32.055057525634766 41.29717254638672L32.09815979003906 41.434356689453125Q32.13942337036133 41.56568908691406 32.1851806640625 41.69552230834961L32.23335647583008 41.832218170166016Q32.278785705566406 41.96112060546875 32.328590393066406 42.08839797973633L32.38185119628906 42.22450256347656Q32.43134689331055 42.350975036621094 32.485103607177734 42.4756965637207L32.54347229003906 42.61111831665039Q32.59681701660156 42.73488998413086 32.654300689697266 42.85679244995117L32.715457916259766 42.986480712890625Q32.66135787963867 42.98871612548828 32.60709762573242 42.98978042602539L32.13888168334961 42.99897384643555Q32.05527114868164 43.00061798095703 31.971651077270508 42.99946212768555L31.503385543823242 42.99299240112305Q31.41974639892578 42.99183654785156 31.33619499206543 42.987884521484375L30.868410110473633 42.965755462646484Q30.784887313842773 42.9618034362793 30.7015438079834 42.95506286621094L30.234760284423828 42.91730499267578Q30.15137481689453 42.910560607910156 30.068262100219727 42.90102767944336L29.603004455566406 42.84767532348633Q29.519899368286133 42.8381462097168 29.43716049194336 42.82583999633789L28.97394561767578 42.7569580078125Q28.8912410736084 42.74465560913086 28.808992385864258 42.72959899902344L28.34834098815918 42.645263671875Q28.266040802001953 42.63019561767578 28.184289932250977 42.61238479614258L27.726716995239258 42.5126838684082Q27.645021438598633 42.49488067626953 27.56396484375 42.47435760498047L27.109981536865234 42.359413146972656Q27.028892517089844 42.33888244628906 26.94853401184082 42.315650939941406L26.49864959716797 42.185585021972656Q26.41830825805664 42.162357330322266 26.338788986206055 42.13645553588867L25.893505096435547 41.991416931152344Q25.813976287841797 41.96551513671875 25.7353572845459 41.93696212768555L25.295175552368164 41.7771110534668Q25.216577529907227 41.74856948852539 25.13897705078125 41.71741485595703L24.704387664794922 41.54293441772461Q24.626750946044922 41.51176452636719 24.55019760131836 41.47801208496094L24.121688842773438 41.28908920288086Q24.0451602935791 41.25535202026367 23.969804763793945 41.21907043457031L23.547853469848633 41.01592254638672Q23.47249412536621 40.97964096069336 23.398391723632812 40.940860748291016L23.0 40.732364654541016V57.0H13.0V24.0H13.000057220458984Q13.000171661376953 23.97197914123535 13.000598907470703 23.94401741027832L13.0077486038208 23.47576332092285Q13.009025573730469 23.39212417602539 13.013100624084473 23.30857276916504L13.035910606384277 22.8408203125Q13.039983749389648 22.75729751586914 13.04684829711914 22.6739559173584L13.085286140441895 22.20722770690918Q13.092151641845703 22.12386131286621 13.101802825927734 22.040771484375L13.155832290649414 21.57558822631836Q13.165481567382812 21.492511749267578 13.177902221679688 21.40980339050293L13.247461318969727 20.94668960571289Q13.259883880615234 20.86397361755371 13.275068283081055 20.78171730041504L13.360076904296875 20.321189880371094Q13.37525749206543 20.238948822021484 13.393180847167969 20.15726089477539L13.49354362487793 19.699832916259766Q13.511466979980469 19.618144989013672 13.532110214233398 19.53710174560547L13.647714614868164 19.08328628540039Q13.668365478515625 19.00222396850586 13.691715240478516 18.921897888183594L13.82243537902832 18.472204208374023Q13.84577751159668 18.39190101623535 13.871793746948242 18.312423706054688L14.017478942871094 17.867353439331055Q14.043500900268555 17.78785514831543 14.072168350219727 17.709270477294922L14.232660293579102 17.26932144165039Q14.261322021484375 17.190753936767578 14.292593955993652 17.113189697265625L14.4677095413208 16.67885398864746Q14.498985290527344 16.601282119750977 14.5328369140625 16.524799346923828L14.722381591796875 16.0965633392334Q14.756232261657715 16.020084381103516 14.792622566223145 15.944781303405762L14.996382713317871 15.523125648498535Q15.03277587890625 15.44781494140625 15.071667671203613 15.373763084411621L15.289417266845703 14.95915699005127Q15.328304290771484 14.885116577148438 15.369644165039062 14.812417030334473L15.601137161254883 14.405326843261719Q15.642486572265625 14.33261489868164 15.686244010925293 14.26132583618164L15.931225776672363 13.862205505371094Q15.9749755859375 13.790929794311523 16.02108383178711 13.72115707397461L16.27927589416504 13.330453872680664Q16.325389862060547 13.260673522949219 16.373809814453125 13.192474365234375Z"></path><path class="my" d="M44.22683334350586 57.0 35.725425720214844 42.27436447143555 35.65163803100586 42.141571044921875Q35.61137390136719 42.06910705566406 35.57353210449219 41.99534606933594L35.504905700683594 41.86157989501953Q35.46681594848633 41.78733825683594 35.43122482299805 41.71186447143555L35.367733001708984 41.57722473144531Q35.33180618286133 41.501033782958984 35.2984619140625 41.42367935180664L35.24009323120117 41.28825759887695Q35.20649719238281 41.210304260253906 35.17556381225586 41.13125991821289L35.1223030090332 40.995155334472656Q35.0911750793457 40.91560745239258 35.062782287597656 40.835044860839844L35.01460647583008 40.69834899902344Q34.98600769042969 40.61720275878906 34.9602165222168 40.535118103027344L34.9171142578125 40.39793395996094Q34.89118957519531 40.31541442871094 34.86812973022461 40.23204803466797L34.830078125 40.09446716308594Q34.80685043334961 40.0104866027832 34.786563873291016 39.92574691772461L34.75355529785156 39.78786849975586Q34.73319625854492 39.70282745361328 34.715824127197266 39.617130279541016L34.68783187866211 39.47904586791992Q34.67036056518555 39.392860412597656 34.65592956542969 39.30611038208008L34.63294219970703 39.16791915893555Q34.61844253540039 39.08075714111328 34.607032775878906 38.99313735961914L34.58903503417969 38.85493087768555Q34.577598571777344 38.767093658447266 34.569278717041016 38.67890930175781L34.55624771118164 38.54079055786133Q34.54789733886719 38.4522705078125 34.54269790649414 38.36350631713867L34.53461837768555 38.22556686401367Q34.529396057128906 38.136451721191406 34.52736282348633 38.047203063964844L34.52422332763672 37.90953826904297Q34.522186279296875 37.820247650146484 34.523338317871094 37.7309455871582L34.52511215209961 37.59365463256836Q34.52627182006836 37.503997802734375 34.530643463134766 37.41444396972656L34.537322998046875 37.27762222290039Q34.54170227050781 37.187965393066406 34.549293518066406 37.0985221862793L34.56085968017578 36.96226501464844Q34.568458557128906 36.872764587402344 34.579261779785156 36.78359603881836L34.59569549560547 36.64799880981445Q34.60650634765625 36.55881118774414 34.620513916015625 36.470069885253906L34.64179229736328 36.335227966308594Q34.65582275390625 36.24635696411133 34.67303466796875 36.158050537109375L34.699153900146484 36.02406311035156Q34.71634292602539 35.93589401245117 34.73668670654297 35.8484001159668L34.767616271972656 35.71535873413086Q34.78797149658203 35.6278190612793 34.811458587646484 35.54106140136719L34.84719467163086 35.40906524658203Q34.87064743041992 35.32244873046875 34.89719009399414 35.23672866821289L34.93770980834961 35.105873107910156Q34.96421813964844 35.020259857177734 34.99378204345703 34.93565368652344L35.03907012939453 34.806034088134766Q35.06854248046875 34.721675872802734 35.10101318359375 34.63842010498047L35.15104675292969 34.510135650634766Q35.183475494384766 34.42699432373047 35.218849182128906 34.345062255859375L35.27362060546875 34.21820068359375Q35.30885696411133 34.1365852355957 35.34697341918945 34.0562744140625L35.406455993652344 33.93094253540039Q35.4444694519043 33.85084533691406 35.48529815673828 33.77214813232422L35.54948043823242 33.6484375Q35.59014892578125 33.57005310058594 35.6335563659668 33.4931526184082L35.702423095703125 33.37115478515625Q35.74565887451172 33.294559478759766 35.79156494140625 33.21953201293945L35.86509704589844 33.09934997558594Q35.91074752807617 33.024742126464844 35.95897674560547 32.95177459716797L36.03715515136719 32.833499908447266Q36.08514404296875 32.76089859008789 36.13562774658203 32.69001007080078L36.21843719482422 32.57373809814453Q36.268638610839844 32.50325393676758 36.321250915527344 32.43454360961914L36.40867233276367 32.32037353515625Q36.46099853515625 32.25203323364258 36.51565170288086 32.1855354309082L36.60767364501953 32.07356262207031Q36.66190719604492 32.007572174072266 36.718360900878906 31.943471908569336L36.81496047973633 31.833791732788086Q36.87108612060547 31.770065307617188 36.929344177246094 31.708282470703125L37.03050994873047 31.600994110107422Q37.08824157714844 31.53976821899414 37.14800262451172 31.480520248413086L37.25371551513672 31.37571144104004Q37.31303405761719 31.316898345947266 37.37428283691406 31.260101318359375L37.48452377319336 31.157875061035156Q37.54526138305664 31.101552963256836 37.60783386230469 31.047273635864258L37.74628448486328 30.92729949951172L37.88610076904297 30.808897018432617L38.02353286743164 30.687623977661133L38.158451080322266 30.56359100341797L38.29077911376953 30.43687629699707L38.42058563232422 30.30739974975586L38.54763412475586 30.1754150390625L38.67203140258789 30.04079818725586L38.79366683959961 29.903671264648438L38.91242980957031 29.764163970947266L39.02836990356445 29.622211456298828L39.14137649536133 29.477954864501953L39.25147247314453 29.33135986328125L39.35847854614258 29.182668685913086L39.46247863769531 29.031766891479492L39.56340026855469 28.87874984741211L39.661155700683594 28.723764419555664L39.7557373046875 28.566818237304688L39.847137451171875 28.40791130065918L39.93524169921875 28.247262954711914L40.02006912231445 28.084815979003906L40.101585388183594 27.920652389526367L40.179744720458984 27.75486183166504L40.25449752807617 27.587553024291992L40.325809478759766 27.41879653930664L40.39371109008789 27.248512268066406L40.45811462402344 27.076942443847656L40.51900863647461 26.904085159301758L40.57636260986328 26.730064392089844L40.63017654418945 26.55485725402832L40.68040466308594 26.378620147705078L40.7270393371582 26.20136070251465L40.770050048828125 26.023239135742188L40.809425354003906 25.844253540039062L40.84516143798828 25.664440155029297L40.8772087097168 25.48406219482422L40.90558624267578 25.303016662597656L40.930267333984375 25.121437072753906L40.95125198364258 24.939300537109375L40.96852111816406 24.756921768188477L40.98207092285156 24.57415771484375L40.99189758300781 24.391124725341797L40.99800109863281 24.2080020904541L41.0003662109375 24.02471351623535L40.99900436401367 23.841440200805664L40.99391555786133 23.658302307128906L40.98508834838867 23.4752197265625L40.97254180908203 23.29237174987793L40.95627212524414 23.109811782836914L40.93629455566406 22.92765998840332L40.91261291503906 22.74595832824707L40.88523483276367 22.564769744873047L40.85415267944336 22.384077072143555L40.819427490234375 22.204177856445312L40.78104019165039 22.025005340576172L40.7390022277832 21.846607208251953L40.693336486816406 21.66908836364746L40.64409637451172 21.492639541625977L40.59123229980469 21.317102432250977L40.534828186035156 21.142730712890625L40.474884033203125 20.969560623168945L40.41142654418945 20.797626495361328L40.3444938659668 20.627065658569336L40.27407455444336 20.457836151123047L40.20024871826172 20.290128707885742L40.12299346923828 20.123891830444336L40.042396545410156 19.959321975708008L39.95845031738281 19.796396255493164L39.87122344970703 19.63524055480957L39.780723571777344 19.47588539123535L39.68699645996094 19.318405151367188L39.590087890625 19.16286849975586L39.49001693725586 19.009321212768555L39.3868522644043 18.85785484313965L39.2806282043457 18.708526611328125L39.171348571777344 18.561344146728516L39.05915451049805 18.416488647460938L38.94402313232422 18.27393341064453L38.825984954833984 18.133726119995117L38.70510482788086 17.995933532714844L38.58147048950195 17.860660552978516L38.45513153076172 17.72795295715332L38.326080322265625 17.59781265258789L38.19441223144531 17.4703369140625L38.060184478759766 17.345569610595703L37.923431396484375 17.223554611206055L37.784217834472656 17.10434341430664L37.64265441894531 16.988027572631836L37.498680114746094 16.874570846557617L37.35247039794922 16.764095306396484L37.20403289794922 16.6566162109375L37.05343246459961 16.55217742919922L36.9007682800293 16.450843811035156L36.74600601196289 16.352603912353516L36.5893440246582 16.257572174072266L36.430755615234375 16.16573715209961L36.27031326293945 16.0771427154541L36.108089447021484 15.991826057434082L35.9442138671875 15.909854888916016L35.778682708740234 15.831228256225586L35.611549377441406 15.755974769592285L35.44297409057617 15.684160232543945L35.272918701171875 15.615774154663086L35.10154724121094 15.550878524780273L34.928855895996094 15.48947525024414L34.754981994628906 15.431608200073242L34.57993698120117 15.377286911010742L34.403865814208984 15.32655143737793L34.22675323486328 15.279403686523438L34.04871368408203 15.235868453979492L33.869873046875 15.195976257324219L33.690216064453125 15.159727096557617L33.5098762512207 15.127145767211914L33.32890319824219 15.098243713378906L33.147377014160156 15.073030471801758L32.96537780761719 15.051519393920898L32.78298568725586 15.033719062805176L32.60027313232422 15.019636154174805L32.41728210449219 15.009275436401367L32.23414993286133 15.002643585205078L31.941102981567383 14.999652862548828L31.40736198425293 14.993366241455078Q31.34839630126953 14.992671966552734 31.289464950561523 14.990585327148438L30.761024475097656 14.97188949584961Q30.702045440673828 14.969802856445312 30.643131256103516 14.966323852539062L30.120420455932617 14.935462951660156Q30.061378479003906 14.931976318359375 30.00243377685547 14.927095413208008L29.485876083374023 14.884315490722656Q29.426725387573242 14.879417419433594 29.367708206176758 14.873115539550781L28.85773277282715 14.81866455078125Q28.79840087890625 14.81233024597168 28.739238739013672 14.804580688476562L28.236270904541016 14.738703727722168Q28.17669677734375 14.730901718139648 28.117328643798828 14.72166919708252L27.621793746948242 14.644611358642578Q27.561908721923828 14.635299682617188 27.502267837524414 14.62453842163086L27.01459503173828 14.53654956817627Q26.954315185546875 14.525673866271973 26.894319534301758 14.513323783874512L26.414936065673828 14.41464614868164Q26.35419464111328 14.402142524719238 26.293779373168945 14.38813591003418L25.82310676574707 14.279016494750977Q25.761808395385742 14.264806747436523 25.70088768005371 14.249055862426758L25.23935890197754 14.129741668701172Q25.17742156982422 14.113730430603027 25.115915298461914 14.096138954162598L24.663951873779297 13.966875076293945Q24.601289749145508 13.948953628540039 24.539113998413086 13.929403305053711L24.097143173217773 13.790437698364258Q24.033647537231445 13.770472526550293 23.970705032348633 13.748825073242188L23.539155960083008 13.600400924682617Q23.474748611450195 13.578248023986816 23.410966873168945 13.554349899291992L22.990264892578125 13.396716117858887Q22.924846649169922 13.372203826904297 22.860136032104492 13.34587287902832L22.450706481933594 13.17927360534668Q22.384170532226562 13.152198791503906 22.318437576293945 13.123224258422852L21.92070960998535 12.947905540466309Q21.852985382080078 12.918052673339844 21.786174774169922 12.886207580566406L21.400571823120117 12.702417373657227Q21.331558227539062 12.669523239135742 21.26358413696289 12.63453483581543L20.890535354614258 12.442517280578613Q20.820167541503906 12.40629768371582 20.7509822845459 12.367868423461914L20.390911102294922 12.167871475219727Q20.319129943847656 12.128000259399414 20.248695373535156 12.085793495178223L19.90203094482422 11.878061294555664Q19.82878303527832 11.83416748046875 19.7570743560791 11.787797927856445L19.424243927001953 11.572577476501465Q19.349531173706055 11.52426528930664 19.27658462524414 11.473325729370117L18.9580135345459 11.250863075256348Q18.881847381591797 11.197675704956055 18.807708740234375 11.141695022583008L18.50382423400879 10.912235260009766Q18.42629051208496 10.853690147399902 18.351089477539062 10.792177200317383L18.06231689453125 10.55596923828125Q17.98353385925293 10.49152660369873 17.907440185546875 10.423932075500488L17.634206771850586 10.181219100952148Q17.55439567565918 10.110322952270508 17.47768211364746 10.036084175109863L17.220413208007812 9.787114143371582Q17.139856338500977 9.709156036376953 17.062875747680664 9.627665519714355L16.82200050354004 9.372682571411133Q16.74112892150879 9.287076950073242 16.664379119873047 9.197757720947266L16.440322875976562 8.937009811401367Q16.359683990478516 8.843164443969727 16.283782958984375 8.745443344116211L16.07697105407715 8.47917652130127Q15.997251510620117 8.376537322998047 15.922971725463867 8.2698974609375L15.733831405639648 7.998355865478516Q15.655889511108398 7.886458396911621 15.584163665771484 7.770479202270508L15.413122177124023 7.493910789489746Q15.337987899780273 7.372419357299805 15.26991081237793 7.2468366622924805L15.117393493652344 6.965487480163574Q15.046270370483398 6.834283351898193 14.983098983764648 6.699070930480957L14.849533081054688 6.413186073303223Q14.783727645874023 6.272336483001709 14.726799964904785 6.127670764923096L14.6126127243042 5.837496757507324Q14.553560256958008 5.687432289123535 14.504301071166992 5.53387451171875L14.409919738769531 5.239657878875732Q14.359076499938965 5.081162929534912 14.318886756896973 4.919637680053711L14.24473762512207 4.621623992919922Q14.2034912109375 4.455856800079346 14.173656463623047 4.287661075592041L14.120162963867188 3.9860968589782715Q14.089733123779297 3.8145604133605957 14.071318626403809 3.641322135925293L14.038909912109375 3.336453437805176Q14.020265579223633 3.161057472229004 14.014026641845703 2.98478364944458L14.003128051757812 2.6768558025360107Q14.0 2.5884556770324707 14.0 2.5V1.0H24.0V2.3665552139282227L24.01738929748535 2.394674301147461L24.05430793762207 2.4476749897003174L24.105499267578125 2.5135843753814697L24.17218589782715 2.5911903381347656L24.255184173583984 2.6790504455566406L24.355195999145508 2.775836229324341L24.472524642944336 2.8800599575042725L24.607301712036133 2.9903032779693604L24.759531021118164 3.1052494049072266L24.928979873657227 3.2235782146453857L25.11536979675293 3.3441059589385986L25.31839370727539 3.4657630920410156L25.537464141845703 3.587444543838501L25.772180557250977 3.708259105682373L26.021944046020508 3.8273050785064697L26.286216735839844 3.9437966346740723L26.56441879272461 4.056998252868652L26.855911254882812 4.166219234466553L27.16012954711914 4.270849704742432L27.476411819458008 4.370296478271484L27.8042049407959 4.464046955108643L28.14286994934082 4.551599025726318L28.49183464050293 4.632501602172852L28.85050392150879 4.706331253051758L29.218223571777344 4.772678375244141L29.594524383544922 4.831193923950195L29.97874641418457 4.8815178871154785L30.370380401611328 4.923333168029785L30.768835067749023 4.956332206726074L31.173585891723633 4.980228900909424L31.584129333496094 4.994754314422607L32.058895111083984 5.000347137451172L32.3359489440918 5.0031609535217285L32.722686767578125 5.013940334320068L33.10908508300781 5.032588958740234L33.495059967041016 5.059103965759277L33.880401611328125 5.093471050262451L34.26496124267578 5.135676860809326L34.648582458496094 5.185703277587891L35.03110885620117 5.243531703948975L35.412376403808594 5.3091349601745605L35.79222106933594 5.382486820220947L36.17052459716797 5.463563919067383L36.54705810546875 5.552317142486572L36.92171096801758 5.648719310760498L37.29436111450195 5.752740383148193L37.66477966308594 5.864316463470459L38.032875061035156 5.983419895172119L38.3984375 6.109981536865234L38.761383056640625 6.243974685668945L39.12148666381836 6.385313034057617L39.47868347167969 6.533974647521973L39.83272933959961 6.689855575561523L40.183563232421875 6.852928161621094L40.5310173034668 7.023119926452637L40.8748893737793 7.2003254890441895L41.21509552001953 7.38450288772583L41.55149459838867 7.57557487487793L41.88395309448242 7.773471832275391L42.21225357055664 7.978056907653809L42.536380767822266 8.189323425292969L42.856109619140625 8.40712833404541L43.17134094238281 8.631399154663086L43.48194885253906 8.86204719543457L43.787757873535156 9.098943710327148L44.0887451171875 9.342066764831543L44.384674072265625 9.591232299804688L44.675472259521484 9.84637451171875L44.961029052734375 10.107394218444824L45.24120330810547 10.37416934967041L45.51588439941406 10.646587371826172L45.78499221801758 10.924574851989746L46.04835891723633 11.20796012878418L46.30588150024414 11.496620178222656L46.55748748779297 11.790484428405762L46.80308151245117 12.089432716369629L47.04254150390625 12.393336296081543L47.27571487426758 12.701977729797363L47.50259017944336 13.01535415649414L47.7230339050293 13.333276748657227L47.93695068359375 13.655611991882324L48.14427185058594 13.982251167297363L48.34489440917969 14.313039779663086L48.53874206542969 14.647848129272461L48.725738525390625 14.986539840698242L48.905784606933594 15.328943252563477L49.078834533691406 15.67497444152832L49.244781494140625 16.02439308166504L49.40360641479492 16.37718963623047L49.55519485473633 16.733091354370117L49.699527740478516 17.09207534790039L49.836509704589844 17.453874588012695L49.966094970703125 17.818408966064453L50.088233947753906 18.18549156188965L50.202857971191406 18.554929733276367L50.309967041015625 18.926755905151367L50.40945816040039 19.300579071044922L50.50132369995117 19.67636489868164L50.58552551269531 20.05398941040039L50.66202163696289 20.433263778686523L50.73076248168945 20.81389617919922L50.79175567626953 21.195951461791992L50.84495544433594 21.579172134399414L50.89033889770508 21.96339225769043L50.927886962890625 22.348417282104492L50.95759201049805 22.734130859375L50.979434967041016 23.12035369873047L50.993412017822266 23.507028579711914L50.99951171875 23.89383888244629L50.99773406982422 24.280664443969727L50.98808288574219 24.667457580566406L50.970558166503906 25.053897857666016L50.945167541503906 25.439931869506836L50.91191482543945 25.825443267822266L50.87083435058594 26.21004867553711L50.821922302246094 26.593830108642578L50.76520919799805 26.976531982421875L50.70069885253906 27.358047485351562L50.62846374511719 27.738048553466797L50.548492431640625 28.116561889648438L50.4608268737793 28.49339485168457L50.365516662597656 28.86831283569336L50.2625846862793 29.24125099182129L50.15209197998047 29.611984252929688L50.034053802490234 29.980443954467773L49.908546447753906 30.346385955810547L49.77561569213867 30.70970916748047L49.63534164428711 31.070186614990234L49.48770523071289 31.427846908569336L49.33283615112305 31.782384872436523L49.170799255371094 32.13365936279297L49.001644134521484 32.48155975341797L48.82542419433594 32.82597351074219L48.6422119140625 33.1667594909668L48.4521484375 33.503658294677734L48.255226135253906 33.83668899536133L48.05155944824219 34.1656379699707L47.841270446777344 34.49032211303711L47.6244010925293 34.81068420410156L47.4010009765625 35.126625061035156L47.17130661010742 35.43783950805664L46.93526840209961 35.744380950927734L46.69306182861328 36.046024322509766L46.4447135925293 36.34272766113281L46.190433502197266 36.63425064086914L45.93027114868164 36.92053985595703L45.66426086425781 37.201541900634766L45.39269256591797 37.47696304321289L45.115474700927734 37.74689483642578L44.83285903930664 38.01108169555664L44.81746292114258 38.024898529052734L55.7733154296875 57.0H44.22683334350586Z"></path></svg>
-      <span>Roadmap <span class="rn">Consulting</span></span>
+      <span>Roadmap Consulting</span>
     </a>
-    <nav id="site-nav" aria-label="Sections">
+    <nav class="nav" id="site-nav" aria-label="Sections">
       <a href="/">Home</a>
       <a href="#services">What I do</a>
       <a href="#approach">How it works</a>
       <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
-      <a class="btn primary nav-cta" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
+      <a class="btn btn-y nav-cta" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
     </nav>
     <div class="head-right">
-      <a class="btn primary head-cta" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
+      <a class="btn btn-y" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
       <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
         <svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
         <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
@@ -281,158 +392,193 @@ header.site.open .menu-btn .i-open { display:none; } header.site.open .menu-btn 
   </div>
 </header>
 
-<main id="top">
-  <div class="hero">
-    <div class="map" aria-hidden="true"></div>
-    <div class="wrap inner">
-      <span class="label">Independent Qargo specialist for UK hauliers, 3PLs and pallet network members</span>
-      <h1>Already on Qargo? Let's get your planners <em>using all of it</em>.</h1>
-      <p>Most operators get a couple of training sessions, spread across a 12-week onboarding, then spend months logging jobs instead of planning them. I used to run Qargo onboardings. Now I work independently, for you, to get planning, rate cards, invoicing and network links doing the job you bought Qargo for.</p>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="map" aria-hidden="true"></div>
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Independent Qargo specialist for UK hauliers, 3PLs and pallet network members</p>
+      <h1 id="hero-h">Already on Qargo? Let's get your planners using all of it.</h1>
+      <p class="lead">Most operators get a couple of training sessions, spread across a 12-week onboarding, then spend months logging jobs instead of planning them. I used to run Qargo onboardings. Now I work independently, for you, to get planning, rate cards, invoicing and network links doing the job you bought Qargo for.</p>
       <div class="actions">
-        <a class="btn primary" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
-        <a class="btn secondary" href="#contact">Contact details</a>
+        <a class="btn btn-y" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
+        <a class="text-link" href="/sample-plan.pdf" target="_blank" rel="noopener">See a sample plan (PDF, 1 page)</a>
       </div>
-      <p class="note">A 30-minute chat about your operation, then a written plan in your inbox within two working days: what to fix first, the main risks, and what your team can do themselves. Yours to keep. No cost, no commitment. <a href="/sample-plan.pdf" target="_blank" rel="noopener">See a sample plan (PDF, 1 page)</a></p>
-      <ul class="creds" aria-label="Credentials">
-        <li><span class="k">Background</span>Former Customer Onboarding Manager at Qargo. Transport roles at XPO, Amazon, UPS and A.S. Watson</li>
-        <li><span class="k">Current work</span>Rolling out Qargo across a UK logistics group's 13 transport depots</li>
-        <li><span class="k">Independent</span>Not employed by, partnered with or endorsed by Qargo</li>
-      </ul>
+      <p class="note">A 30-minute chat about your operation, then a written plan in your inbox within two working days: what to fix first, the main risks, and what your team can do themselves. Yours to keep. No cost, no commitment.</p>
     </div>
-    <span class="credit">Contains OS data © Crown copyright and database right 2026</span>
-  </div>
 
-  <section class="s" id="signs">
-    <div class="wrap">
-      <div class="head">
-        <span class="label">Sound familiar?</span>
-        <h2>Signs your Qargo setup is working against you</h2>
-        <p>These come up again and again after go-live. None of them means you chose the wrong system. They mean the setup has not caught up with how you work.</p>
-      </div>
-      <ul class="checks">
-        <li>Jobs go into Qargo, but the real planning still happens on a whiteboard, a spreadsheet or in someone's head.</li>
-        <li>Rate cards and fuel surcharge do not price every job correctly, so invoices get checked and changed by hand.</li>
-        <li>Updates to a pallet network or a customer do not always go through, so someone keys them in again.</li>
-        <li>The people trained at go-live have moved on, and new starters learn from whoever sits next to them.</li>
-        <li>Each problem gets its own support ticket, but nobody has looked at how the whole setup fits your operation.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="s" id="services">
-    <div class="wrap">
-      <div class="head">
-        <span class="label">What I do</span>
-        <h2>Qargo training, health checks and fixes, on your own jobs</h2>
-      </div>
-      <div class="services">
-        <article class="service">
-          <h3>Planning and scheduling training</h3>
-          <p>Hands-on sessions at your depot with your planners, using your own work, not a demo account.</p>
-          <ul><li>Planning trips and loads, not just logging jobs</li><li>Subcontracting, reloads and backloads</li><li>Short written guides for new starters</li></ul>
-        </article>
-        <article class="service">
-          <h3>Setup health check</h3>
-          <p>I go through your setup against how you actually run the operation.</p>
-          <ul><li>Customers, addresses, services and documents</li><li>Users, permissions and views</li><li>A written list of fixes, most valuable first</li></ul>
-        </article>
-        <article class="service">
-          <h3>Rates and invoicing</h3>
-          <p>Jobs priced right first time, and invoices out without keying anything twice.</p>
-          <ul><li>Rate cards, fuel surcharge and extras</li><li>Self-billing and subcontractor costs</li><li>Exports to your accounts package</li></ul>
-        </article>
-        <article class="service">
-          <h3>Links and new depots</h3>
-          <p>Connect Qargo to the rest of the business, and bring more of it across.</p>
-          <ul><li>Pallet networks such as Palletline and Palletforce</li><li>Telematics and customer data links</li><li>Adding a depot, a group company or a business you have bought</li></ul>
-        </article>
-      </div>
-      <p class="after">I also build reports and time-saving tools on Qargo's API, so managers get answers without waiting on anyone.</p>
-    </div>
-  </section>
-
-  <section class="s" id="approach">
-    <div class="wrap">
-      <div class="head">
-        <span class="label">How it works</span>
-        <h2>From the first call to planners who trust the system</h2>
-      </div>
-      <ol class="route">
-        <li><h3>Chat</h3><p>30 minutes on how you plan, price and invoice today, and where Qargo is getting in the way.</p><p class="get">You get: a clear picture of the problem</p></li>
-        <li><h3>Plan</h3><p>Within two working days I send a one-page plan: what to fix first, the risks, and what your team can do themselves.</p><p class="get">You get: a written plan, yours to keep</p></li>
-        <li><h3>Fix and train</h3><p>If you want my help, I put the setup right and train your team on site, around the working day.</p><p class="get">You get: a setup that fits your operation</p></li>
-        <li><h3>30-day check</h3><p>I come back to see how the team is using it, sort what is left and leave clear notes.</p><p class="get">You get: a written review of what works and what does not</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="s" id="about">
-    <div class="wrap about">
-      <div>
-        <div class="head">
-          <span class="label">Why an independent specialist</span>
-          <h2>I know Qargo from the inside, and I work for you</h2>
+    <figure class="plan" id="health-check">
+      <div class="paper">
+        <div class="paper-bar"><b>Setup health check</b><span>Sample, fictional client</span></div>
+        <div class="plan-body">
+          <p class="plan-title">Getting more out of Qargo at 2 depots</p>
+          <dl>
+            <div><dt>Prepared for</dt><dd>Example Haulage Ltd</dd></div>
+            <div><dt>Operation</dt><dd>2 depots, 40 vehicles</dd></div>
+            <div><dt>Live on Qargo</dt><dd>7 months</dd></div>
+          </dl>
+          <div class="rec"><strong>What I recommend</strong>Fix the rate cards before any more training. Planners stop trusting a system when invoices get changed by hand.</div>
+          <p class="k">Fixes, in the order I would do them</p>
+          <ol class="hc-list">
+            <li><span>Fuel surcharge missing from 3 rate cards</span><span class="chip">High</span></li>
+            <li><span>Trips planned on a whiteboard, then keyed in</span><span class="chip">High</span></li>
+            <li><span>Pallet network updates keyed in twice</span><span class="chip med">Medium</span></li>
+            <li><span>No written guide for new starters</span><span class="chip low">Low</span></li>
+          </ol>
         </div>
-        <p>I was a Customer Onboarding Manager at Qargo, taking UK hauliers, 3PLs and pallet network members from kick-off to go-live. I know which settings matter, what a standard onboarding has no time for, and what gets left to the customer.</p>
-        <p>I am not employed by, partnered with or endorsed by Qargo. Keep using Qargo's support for faults. I help with the part between the software and your operation: how it is set up, and how your team uses it.</p>
-        <p>Before Qargo I worked in transport operations at XPO, Amazon, UPS and A.S. Watson, so I know what a traffic office is up against on a Monday morning.</p>
       </div>
-      <dl class="facts">
-        <div class="fact"><dt>Role</dt><dd>Principal Consultant</dd></div>
-        <div class="fact"><dt>Specialism</dt><dd>Qargo setup, training and rollouts for UK road freight</dd></div>
-        <div class="fact"><dt>Also</dt><dd>Any TMS project, including choosing a system</dd></div>
-        <div class="fact"><dt>Based</dt><dd>Cardiff, on site anywhere in the UK</dd></div>
-        <div class="fact"><dt>Insurance</dt><dd>Professional indemnity and public liability</dd></div>
-        <div class="fact"><dt>Profile</dt><dd><a href="https://www.linkedin.com/in/dysonick" target="_blank" rel="noopener">linkedin.com/in/dysonick</a></dd></div>
-      </dl>
-    </div>
-  </section>
+      <figcaption>Every name and figure on this sample is made up to show the format.</figcaption>
+    </figure>
+  </div>
+</section>
 
-  <section class="s" id="faq">
-    <div class="wrap">
-      <div class="head">
-        <span class="label">Questions</span>
-        <h2>Common questions</h2>
-      </div>
-      <div class="faq">
-        <details><summary>Are you part of Qargo?</summary><p>No. Roadmap Consulting is an independent company. I used to work at Qargo, but I am not employed by, partnered with or endorsed by them.</p></details>
-        <details><summary>Will this get in the way of Qargo's own support?</summary><p>No. Keep raising faults with Qargo as you do now. My work is about how your setup fits the way you operate, and how well your team knows it.</p></details>
-        <details><summary>We have only just gone live. Is it too early?</summary><p>No. The first few months are when habits form. Putting the setup right now saves months of workarounds later.</p></details>
-        <details><summary>Do you only work with Qargo?</summary><p>No. I help with any TMS project, from choosing a system to getting every depot live. Qargo is where I have the deepest knowledge.</p></details>
-        <details><summary>What does the one-page plan cost?</summary><p>Nothing. A 30-minute chat, then a written plan you keep. If you want help with the work after that, we agree the scope and the price before anything starts.</p></details>
-      </div>
-    </div>
-  </section>
+<section class="creds" aria-label="Credentials">
+  <ul class="wrap">
+    <li><strong>Former Customer Onboarding Manager at Qargo</strong><span>Transport roles at XPO, Amazon, UPS and A.S. Watson</span></li>
+    <li><strong>Rolling out Qargo across 13 depots</strong><span>For a UK logistics group</span></li>
+    <li><strong>Independent</strong><span>Not employed by, partnered with or endorsed by Qargo</span></li>
+    <li><strong>Insured</strong><span>Professional indemnity and public liability</span></li>
+  </ul>
+</section>
 
-  <section class="s band" id="contact">
-    <div class="wrap">
-      <div class="head">
-        <span class="label">Contact</span>
-        <h2>Want more out of Qargo?</h2>
-        <p>Tell me what is getting in the way. Within two working days of our 30-minute chat, I send you a one-page written plan. Yours to keep. No cost, no commitment.</p>
-        <p>This is for hauliers, 3PLs and pallet network members already on Qargo or about to go live, whether you run one depot or twenty.</p>
-        <p>Choosing or moving to a new TMS instead? <a href="/" style="color:var(--g-accent)">See how I help with that</a>.</p>
-      </div>
-      <div class="contact">
-        <div class="channel"><span class="label">Email</span><button type="button" class="reveal" data-kind="email" data-a="nick" data-b="roadmapconsulting" data-c="co.uk">Show email address</button></div>
-        <div class="channel"><span class="label">Phone</span><button type="button" class="reveal" data-kind="phone" data-n="7534|748661">Show phone number</button></div>
-        <div class="channel"><span class="label">Meeting</span><a class="value" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a></div>
-      </div>
+<section class="work" id="signs" aria-labelledby="signs-h">
+  <div class="wrap two">
+    <div class="rv">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2 id="signs-h">Signs your Qargo setup is working against you</h2>
+      <p class="intro">These come up again and again after go-live. None of them means you chose the wrong system. They mean the setup has not caught up with how you work.</p>
     </div>
-  </section>
+    <ol class="four-parts signs">
+      <li class="rv"><span class="n" aria-hidden="true">01</span><span>Jobs go into Qargo, but the real planning still happens on a whiteboard, a spreadsheet or in someone's head.</span></li>
+      <li class="rv"><span class="n" aria-hidden="true">02</span><span>Rate cards and fuel surcharge do not price every job correctly, so invoices get checked and changed by hand.</span></li>
+      <li class="rv"><span class="n" aria-hidden="true">03</span><span>Updates to a pallet network or a customer do not always go through, so someone keys them in again.</span></li>
+      <li class="rv"><span class="n" aria-hidden="true">04</span><span>The people trained at go-live have moved on, and new starters learn from whoever sits next to them.</span></li>
+      <li class="rv"><span class="n" aria-hidden="true">05</span><span>Each problem gets its own support ticket, but nobody has looked at how the whole setup fits your operation.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="services-s" id="services" aria-labelledby="services-h">
+  <div class="wrap">
+    <p class="eyebrow rv">What I do</p>
+    <h2 id="services-h" class="rv">Qargo training, health checks and fixes, on your own jobs</h2>
+    <div class="services">
+      <article class="service rv">
+        <h3>Planning and scheduling training</h3>
+        <p>Hands-on sessions at your depot with your planners, using your own work, not a demo account.</p>
+        <ul><li>Planning trips and loads, not just logging jobs</li><li>Subcontracting, reloads and backloads</li><li>Short written guides for new starters</li></ul>
+      </article>
+      <article class="service rv">
+        <h3>Setup health check</h3>
+        <p>I go through your setup against how you actually run the operation.</p>
+        <ul><li>Customers, addresses, services and documents</li><li>Users, permissions and views</li><li>A written list of fixes, most valuable first</li></ul>
+      </article>
+      <article class="service rv">
+        <h3>Rates and invoicing</h3>
+        <p>Jobs priced right first time, and invoices out without keying anything twice.</p>
+        <ul><li>Rate cards, fuel surcharge and extras</li><li>Self-billing and subcontractor costs</li><li>Exports to your accounts package</li></ul>
+      </article>
+      <article class="service rv">
+        <h3>Links and new depots</h3>
+        <p>Connect Qargo to the rest of the business, and bring more of it across.</p>
+        <ul><li>Pallet networks such as Palletline and Palletforce</li><li>Telematics and customer data links</li><li>Adding a depot, a group company or a business you have bought</li></ul>
+      </article>
+    </div>
+    <p class="after rv">I also build reports and time-saving tools on Qargo's API, so managers get answers without waiting on anyone.</p>
+  </div>
+</section>
+
+<section class="method" id="approach" aria-labelledby="approach-h">
+  <div class="map" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow rv">How it works</p>
+    <h2 id="approach-h" class="rv">From the first call to planners who trust the system</h2>
+    <ol class="route r4">
+      <li><span class="dot" aria-hidden="true"></span><h3>Chat</h3><span class="desc">30 minutes on how you plan, price and invoice today, and where Qargo is getting in the way.</span><span class="keep">You get: a clear picture of the problem</span></li>
+      <li><span class="dot" aria-hidden="true"></span><h3>Plan</h3><span class="desc">Within two working days I send a one-page plan: what to fix first, the risks, and what your team can do themselves.</span><span class="keep">You get: a written plan, yours to keep</span></li>
+      <li><span class="dot" aria-hidden="true"></span><h3>Fix and train</h3><span class="desc">If you want my help, I put the setup right and train your team on site, around the working day.</span><span class="keep">You get: a setup that fits your operation</span></li>
+      <li><span class="dot" aria-hidden="true"></span><h3>30-day check</h3><span class="desc">I come back to see how the team is using it, sort what is left and leave clear notes.</span><span class="keep">You get: a written review of what works and what does not</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap two">
+    <div class="bio rv">
+      <p class="eyebrow">Why an independent specialist</p>
+      <h2 id="about-h">I know Qargo from the inside, and I work for you</h2>
+      <p class="first">I was a Customer Onboarding Manager at Qargo, taking UK hauliers, 3PLs and pallet network members from kick-off to go-live. I know which settings matter, what a standard onboarding has no time for, and what gets left to the customer.</p>
+      <p>I am not employed by, partnered with or endorsed by Qargo. Keep using Qargo's support for faults. I help with the part between the software and your operation: how it is set up, and how your team uses it.</p>
+      <p>Before Qargo I worked in transport operations at XPO, Amazon, UPS and A.S. Watson, so I know what a traffic office is up against on a Monday morning.</p>
+    </div>
+    <dl class="facts rv">
+      <div><dt>Role</dt><dd>Principal Consultant</dd></div>
+      <div><dt>Specialism</dt><dd>Qargo setup, training and rollouts for UK road freight</dd></div>
+      <div><dt>Also</dt><dd>Any TMS project, including choosing a system</dd></div>
+      <div><dt>Based</dt><dd>Cardiff, on site anywhere in the UK</dd></div>
+      <div><dt>Insurance</dt><dd>Professional indemnity and public liability</dd></div>
+      <div><dt>Profile</dt><dd><a href="https://www.linkedin.com/in/dysonick" target="_blank" rel="noopener">linkedin.com/in/dysonick</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="faq-s" id="faq" aria-labelledby="faq-h">
+  <div class="wrap two">
+    <div class="rv">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-h">Common questions</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Are you part of Qargo?</summary><p>No. Roadmap Consulting is an independent company. I used to work at Qargo, but I am not employed by, partnered with or endorsed by them.</p></details>
+      <details><summary>Will this get in the way of Qargo's own support?</summary><p>No. Keep raising faults with Qargo as you do now. My work is about how your setup fits the way you operate, and how well your team knows it.</p></details>
+      <details><summary>We have only just gone live. Is it too early?</summary><p>No. The first few months are when habits form. Putting the setup right now saves months of workarounds later.</p></details>
+      <details><summary>Do you only work with Qargo?</summary><p>No. I help with any TMS project, from choosing a system to getting every depot live. Qargo is where I have the deepest knowledge.</p></details>
+      <details><summary>What does the one-page plan cost?</summary><p>Nothing. A 30-minute chat, then a written plan you keep. If you want help with the work after that, we agree the scope and the price before anything starts.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap two">
+    <div class="rv">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-h">Want more out of Qargo?</h2>
+      <p class="intro">Tell me what is getting in the way. Within two working days of our 30-minute chat, I send you a one-page written plan. Yours to keep. No cost, no commitment.</p>
+      <p class="also">Choosing or moving to a new TMS instead? <a href="/">See how I help with that</a>.</p>
+    </div>
+    <div class="reach rv">
+      <a class="btn btn-y" href="https://calendar.app.google/QbgweHab81wm1Z1L8" target="_blank" rel="noopener">Get your one-page TMS plan</a>
+      <div class="reveals">
+        <button type="button" class="reveal" data-kind="email" data-a="nick" data-b="roadmapconsulting" data-c="co.uk">Show email address</button>
+        <button type="button" class="reveal" data-kind="phone" data-n="7534|748661">Show phone number</button>
+      </div>
+      <p class="who">This is for hauliers, 3PLs and pallet network members already on Qargo or about to go live, whether you run one depot or twenty.</p>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>Roadmap Consulting Ltd, registered in England and Wales.</span>
-    <span class="mono">Company No. 16726574 · VAT No. 520 4345 31</span>
-    <span>Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ</span>
-    <span>Map background contains OS data © Crown copyright and database right 2026.</span>
-    <span><a href="/privacy.html">Privacy notice</a></span>
-      <span class="foot-theme"><button type="button" class="theme-switch" id="theme-toggle" role="switch" aria-checked="false" aria-label="Dark mode" title="Switch between light and dark"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg><span class="track" aria-hidden="true"><span class="knob"></span></span><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></span>
+    <div class="cols">
+      <div class="brand"><svg class="mk" viewBox="-4 -4 72 72" aria-hidden="true"><path class="mw" d="M16.437532424926758 13.102725982666016 16.451662063598633 13.11428451538086Q16.571985244750977 13.212703704833984 16.6960391998291 13.306377410888672L16.999923706054688 13.535835266113281Q17.118545532226562 13.625404357910156 17.24040985107422 13.710505485534668L17.55898094177246 13.932968139648438Q17.675695419311523 14.014471054077148 17.795236587524414 14.09177017211914L18.128067016601562 14.306991577148438Q18.242799758911133 14.381181716918945 18.35999870300293 14.451412200927734L18.706663131713867 14.659144401550293Q18.819358825683594 14.726675033569336 18.9342098236084 14.790468215942383L19.294279098510742 14.99046516418457Q19.40497589111328 15.051952362060547 19.51756477355957 15.109903335571289L19.890613555908203 15.301921844482422Q19.999372482299805 15.357902526855469 20.10979461669922 15.41053295135498L20.495397567749023 15.594324111938477Q20.602294921875 15.645275115966797 20.71065330505371 15.693038940429688L21.108381271362305 15.868358612060547Q21.213552474975586 15.914718627929688 21.320011138916016 15.958037376403809L21.729442596435547 16.124637603759766Q21.832977294921875 16.166765213012695 21.937646865844727 16.20598602294922L22.358348846435547 16.36362075805664Q22.460399627685547 16.40185546875 22.563451766967773 16.437301635742188L22.9950008392334 16.585723876953125Q23.0957088470459 16.620361328125 23.197301864624023 16.652305603027344L23.639272689819336 16.791271209716797Q23.738752365112305 16.82254981994629 23.839012145996094 16.851224899291992L24.290977478027344 16.98048973083496Q24.389387130737305 17.008634567260742 24.48848533630371 17.03425407409668L24.950016021728516 17.153568267822266Q25.047489166259766 17.178768157958984 25.145565032958984 17.20150375366211L25.61623764038086 17.310625076293945Q25.712900161743164 17.33303451538086 25.810089111328125 17.35304069519043L25.91168212890625 17.373952865600586L25.73912239074707 17.535572052001953L25.526443481445312 17.74856185913086L25.32099151611328 17.96855926513672L25.12300682067871 18.195314407348633L24.932697296142578 18.428586959838867L24.750320434570312 18.668062210083008L24.57601547241211 18.91356086730957L24.410076141357422 19.16466522216797L24.25261688232422 19.421194076538086L24.10378646850586 19.682918548583984L23.963804244995117 19.949447631835938L23.83283233642578 20.220478057861328L23.710994720458984 20.495746612548828L23.598434448242188 20.774925231933594L23.495262145996094 21.057748794555664L23.401615142822266 21.34383773803711L23.317598342895508 21.63286781311035L23.24327278137207 21.92464256286621L23.178762435913086 22.218656539916992L23.124116897583008 22.514698028564453L23.079408645629883 22.81237030029297L23.044679641723633 23.111373901367188L23.019968032836914 23.411418914794922L23.005306243896484 23.712081909179688L23.000709533691406 24.013072967529297L23.006181716918945 24.314096450805664L23.021713256835938 24.614643096923828L23.04730224609375 24.914653778076172L23.082902908325195 25.213577270507812L23.128477096557617 25.511119842529297L23.18398094177246 25.80699348449707L23.249338150024414 26.100788116455078L23.32452392578125 26.39238929748535L23.409379959106445 26.681171417236328L23.503860473632812 26.96699333190918L23.60784149169922 27.24947738647461L23.721223831176758 27.528356552124023L23.8438720703125 27.803287506103516L23.97560691833496 28.073884963989258L24.11638832092285 28.340055465698242L24.26593780517578 28.601272583007812L24.424137115478516 28.857336044311523L24.590856552124023 29.108034133911133L24.765859603881836 29.353002548217773L24.94892692565918 29.59193992614746L25.139896392822266 29.82463836669922L25.338552474975586 30.05082893371582L25.544649124145508 30.270235061645508L25.75797462463379 30.482633590698242L25.978282928466797 30.687772750854492L26.205341339111328 30.88544273376465L26.438884735107422 31.075407028198242L26.678665161132812 31.257465362548828L26.924306869506836 31.43133544921875L27.175762176513672 31.596982955932617L27.432476043701172 31.75404167175293L27.694412231445312 31.90248680114746L27.961145401000977 32.04207992553711L28.232391357421875 32.172672271728516L28.50775718688965 32.29407501220703L28.78719711303711 32.40626525878906L29.070110321044922 32.509002685546875L29.356342315673828 32.602237701416016L29.645565032958984 32.68585205078125L29.93729019165039 32.75971603393555L30.231531143188477 32.823829650878906L30.527544021606445 32.878021240234375L30.82544708251953 32.922325134277344L31.12436294555664 32.956600189208984L31.424467086791992 32.98087692260742L31.72517967224121 32.99510192871094L32.02623748779297 32.99925994873047L32.327064514160156 32.99335479736328L32.53983688354492 32.98204803466797Q32.52953338623047 33.0055046081543 32.51935577392578 33.02907180786133L32.46458435058594 33.15593338012695Q32.40798568725586 33.287025451660156 32.356101989746094 33.42005157470703L32.306068420410156 33.548336029052734Q32.25411605834961 33.681541442871094 32.20695877075195 33.8165168762207L32.16167068481445 33.946136474609375Q32.11437225341797 34.081504821777344 32.071956634521484 34.21848678588867L32.031436920166016 34.349342346191406Q31.988967895507812 34.48649597167969 31.951446533203125 34.625083923339844L31.91571044921875 34.757080078125Q31.878129959106445 34.8958854675293 31.845561981201172 35.035953521728516L31.81462860107422 35.16899490356445Q31.782079696655273 35.308982849121094 31.754581451416016 35.45005416870117L31.72846221923828 35.584041595458984Q31.700918197631836 35.7253303527832 31.678476333618164 35.867523193359375L31.657194137573242 36.00236511230469Q31.634784698486328 36.14435577392578 31.617488861083984 36.28705596923828L31.601055145263672 36.42265319824219Q31.583765029907227 36.56532287597656 31.571609497070312 36.708526611328125L31.560043334960938 36.844783782958984Q31.547895431518555 36.98788833618164 31.540891647338867 37.1313362121582L31.534212112426758 37.268157958984375Q31.527217864990234 37.41144943237305 31.52536392211914 37.55489730834961L31.523590087890625 37.69218826293945Q31.521743774414062 37.83507537841797 31.525001525878906 37.977935791015625L31.528141021728516 38.1156005859375Q31.53139877319336 38.25839614868164 31.539751052856445 38.40098571777344L31.547828674316406 38.53892517089844Q31.556148529052734 38.680946350097656 31.56951141357422 38.82257843017578L31.582542419433594 38.960697174072266Q31.595853805541992 39.10179138183594 31.614154815673828 39.24232864379883L31.632152557373047 39.38053512573242Q31.650407791137695 39.520729064941406 31.673606872558594 39.660186767578125L31.69659423828125 39.798377990722656Q31.719684600830078 39.93717575073242 31.747638702392578 40.075077056884766L31.775630950927734 40.21316146850586Q31.80342674255371 40.35028076171875 31.83599853515625 40.4863395690918L31.869007110595703 40.62421798706055Q31.901466369628906 40.759803771972656 31.938631057739258 40.89417266845703L31.976682662963867 41.03175354003906Q32.013572692871094 41.165138244628906 32.055057525634766 41.29717254638672L32.09815979003906 41.434356689453125Q32.13942337036133 41.56568908691406 32.1851806640625 41.69552230834961L32.23335647583008 41.832218170166016Q32.278785705566406 41.96112060546875 32.328590393066406 42.08839797973633L32.38185119628906 42.22450256347656Q32.43134689331055 42.350975036621094 32.485103607177734 42.4756965637207L32.54347229003906 42.61111831665039Q32.59681701660156 42.73488998413086 32.654300689697266 42.85679244995117L32.715457916259766 42.986480712890625Q32.66135787963867 42.98871612548828 32.60709762573242 42.98978042602539L32.13888168334961 42.99897384643555Q32.05527114868164 43.00061798095703 31.971651077270508 42.99946212768555L31.503385543823242 42.99299240112305Q31.41974639892578 42.99183654785156 31.33619499206543 42.987884521484375L30.868410110473633 42.965755462646484Q30.784887313842773 42.9618034362793 30.7015438079834 42.95506286621094L30.234760284423828 42.91730499267578Q30.15137481689453 42.910560607910156 30.068262100219727 42.90102767944336L29.603004455566406 42.84767532348633Q29.519899368286133 42.8381462097168 29.43716049194336 42.82583999633789L28.97394561767578 42.7569580078125Q28.8912410736084 42.74465560913086 28.808992385864258 42.72959899902344L28.34834098815918 42.645263671875Q28.266040802001953 42.63019561767578 28.184289932250977 42.61238479614258L27.726716995239258 42.5126838684082Q27.645021438598633 42.49488067626953 27.56396484375 42.47435760498047L27.109981536865234 42.359413146972656Q27.028892517089844 42.33888244628906 26.94853401184082 42.315650939941406L26.49864959716797 42.185585021972656Q26.41830825805664 42.162357330322266 26.338788986206055 42.13645553588867L25.893505096435547 41.991416931152344Q25.813976287841797 41.96551513671875 25.7353572845459 41.93696212768555L25.295175552368164 41.7771110534668Q25.216577529907227 41.74856948852539 25.13897705078125 41.71741485595703L24.704387664794922 41.54293441772461Q24.626750946044922 41.51176452636719 24.55019760131836 41.47801208496094L24.121688842773438 41.28908920288086Q24.0451602935791 41.25535202026367 23.969804763793945 41.21907043457031L23.547853469848633 41.01592254638672Q23.47249412536621 40.97964096069336 23.398391723632812 40.940860748291016L23.0 40.732364654541016V57.0H13.0V24.0H13.000057220458984Q13.000171661376953 23.97197914123535 13.000598907470703 23.94401741027832L13.0077486038208 23.47576332092285Q13.009025573730469 23.39212417602539 13.013100624084473 23.30857276916504L13.035910606384277 22.8408203125Q13.039983749389648 22.75729751586914 13.04684829711914 22.6739559173584L13.085286140441895 22.20722770690918Q13.092151641845703 22.12386131286621 13.101802825927734 22.040771484375L13.155832290649414 21.57558822631836Q13.165481567382812 21.492511749267578 13.177902221679688 21.40980339050293L13.247461318969727 20.94668960571289Q13.259883880615234 20.86397361755371 13.275068283081055 20.78171730041504L13.360076904296875 20.321189880371094Q13.37525749206543 20.238948822021484 13.393180847167969 20.15726089477539L13.49354362487793 19.699832916259766Q13.511466979980469 19.618144989013672 13.532110214233398 19.53710174560547L13.647714614868164 19.08328628540039Q13.668365478515625 19.00222396850586 13.691715240478516 18.921897888183594L13.82243537902832 18.472204208374023Q13.84577751159668 18.39190101623535 13.871793746948242 18.312423706054688L14.017478942871094 17.867353439331055Q14.043500900268555 17.78785514831543 14.072168350219727 17.709270477294922L14.232660293579102 17.26932144165039Q14.261322021484375 17.190753936767578 14.292593955993652 17.113189697265625L14.4677095413208 16.67885398864746Q14.498985290527344 16.601282119750977 14.5328369140625 16.524799346923828L14.722381591796875 16.0965633392334Q14.756232261657715 16.020084381103516 14.792622566223145 15.944781303405762L14.996382713317871 15.523125648498535Q15.03277587890625 15.44781494140625 15.071667671203613 15.373763084411621L15.289417266845703 14.95915699005127Q15.328304290771484 14.885116577148438 15.369644165039062 14.812417030334473L15.601137161254883 14.405326843261719Q15.642486572265625 14.33261489868164 15.686244010925293 14.26132583618164L15.931225776672363 13.862205505371094Q15.9749755859375 13.790929794311523 16.02108383178711 13.72115707397461L16.27927589416504 13.330453872680664Q16.325389862060547 13.260673522949219 16.373809814453125 13.192474365234375Z"></path><path class="my" d="M44.22683334350586 57.0 35.725425720214844 42.27436447143555 35.65163803100586 42.141571044921875Q35.61137390136719 42.06910705566406 35.57353210449219 41.99534606933594L35.504905700683594 41.86157989501953Q35.46681594848633 41.78733825683594 35.43122482299805 41.71186447143555L35.367733001708984 41.57722473144531Q35.33180618286133 41.501033782958984 35.2984619140625 41.42367935180664L35.24009323120117 41.28825759887695Q35.20649719238281 41.210304260253906 35.17556381225586 41.13125991821289L35.1223030090332 40.995155334472656Q35.0911750793457 40.91560745239258 35.062782287597656 40.835044860839844L35.01460647583008 40.69834899902344Q34.98600769042969 40.61720275878906 34.9602165222168 40.535118103027344L34.9171142578125 40.39793395996094Q34.89118957519531 40.31541442871094 34.86812973022461 40.23204803466797L34.830078125 40.09446716308594Q34.80685043334961 40.0104866027832 34.786563873291016 39.92574691772461L34.75355529785156 39.78786849975586Q34.73319625854492 39.70282745361328 34.715824127197266 39.617130279541016L34.68783187866211 39.47904586791992Q34.67036056518555 39.392860412597656 34.65592956542969 39.30611038208008L34.63294219970703 39.16791915893555Q34.61844253540039 39.08075714111328 34.607032775878906 38.99313735961914L34.58903503417969 38.85493087768555Q34.577598571777344 38.767093658447266 34.569278717041016 38.67890930175781L34.55624771118164 38.54079055786133Q34.54789733886719 38.4522705078125 34.54269790649414 38.36350631713867L34.53461837768555 38.22556686401367Q34.529396057128906 38.136451721191406 34.52736282348633 38.047203063964844L34.52422332763672 37.90953826904297Q34.522186279296875 37.820247650146484 34.523338317871094 37.7309455871582L34.52511215209961 37.59365463256836Q34.52627182006836 37.503997802734375 34.530643463134766 37.41444396972656L34.537322998046875 37.27762222290039Q34.54170227050781 37.187965393066406 34.549293518066406 37.0985221862793L34.56085968017578 36.96226501464844Q34.568458557128906 36.872764587402344 34.579261779785156 36.78359603881836L34.59569549560547 36.64799880981445Q34.60650634765625 36.55881118774414 34.620513916015625 36.470069885253906L34.64179229736328 36.335227966308594Q34.65582275390625 36.24635696411133 34.67303466796875 36.158050537109375L34.699153900146484 36.02406311035156Q34.71634292602539 35.93589401245117 34.73668670654297 35.8484001159668L34.767616271972656 35.71535873413086Q34.78797149658203 35.6278190612793 34.811458587646484 35.54106140136719L34.84719467163086 35.40906524658203Q34.87064743041992 35.32244873046875 34.89719009399414 35.23672866821289L34.93770980834961 35.105873107910156Q34.96421813964844 35.020259857177734 34.99378204345703 34.93565368652344L35.03907012939453 34.806034088134766Q35.06854248046875 34.721675872802734 35.10101318359375 34.63842010498047L35.15104675292969 34.510135650634766Q35.183475494384766 34.42699432373047 35.218849182128906 34.345062255859375L35.27362060546875 34.21820068359375Q35.30885696411133 34.1365852355957 35.34697341918945 34.0562744140625L35.406455993652344 33.93094253540039Q35.4444694519043 33.85084533691406 35.48529815673828 33.77214813232422L35.54948043823242 33.6484375Q35.59014892578125 33.57005310058594 35.6335563659668 33.4931526184082L35.702423095703125 33.37115478515625Q35.74565887451172 33.294559478759766 35.79156494140625 33.21953201293945L35.86509704589844 33.09934997558594Q35.91074752807617 33.024742126464844 35.95897674560547 32.95177459716797L36.03715515136719 32.833499908447266Q36.08514404296875 32.76089859008789 36.13562774658203 32.69001007080078L36.21843719482422 32.57373809814453Q36.268638610839844 32.50325393676758 36.321250915527344 32.43454360961914L36.40867233276367 32.32037353515625Q36.46099853515625 32.25203323364258 36.51565170288086 32.1855354309082L36.60767364501953 32.07356262207031Q36.66190719604492 32.007572174072266 36.718360900878906 31.943471908569336L36.81496047973633 31.833791732788086Q36.87108612060547 31.770065307617188 36.929344177246094 31.708282470703125L37.03050994873047 31.600994110107422Q37.08824157714844 31.53976821899414 37.14800262451172 31.480520248413086L37.25371551513672 31.37571144104004Q37.31303405761719 31.316898345947266 37.37428283691406 31.260101318359375L37.48452377319336 31.157875061035156Q37.54526138305664 31.101552963256836 37.60783386230469 31.047273635864258L37.74628448486328 30.92729949951172L37.88610076904297 30.808897018432617L38.02353286743164 30.687623977661133L38.158451080322266 30.56359100341797L38.29077911376953 30.43687629699707L38.42058563232422 30.30739974975586L38.54763412475586 30.1754150390625L38.67203140258789 30.04079818725586L38.79366683959961 29.903671264648438L38.91242980957031 29.764163970947266L39.02836990356445 29.622211456298828L39.14137649536133 29.477954864501953L39.25147247314453 29.33135986328125L39.35847854614258 29.182668685913086L39.46247863769531 29.031766891479492L39.56340026855469 28.87874984741211L39.661155700683594 28.723764419555664L39.7557373046875 28.566818237304688L39.847137451171875 28.40791130065918L39.93524169921875 28.247262954711914L40.02006912231445 28.084815979003906L40.101585388183594 27.920652389526367L40.179744720458984 27.75486183166504L40.25449752807617 27.587553024291992L40.325809478759766 27.41879653930664L40.39371109008789 27.248512268066406L40.45811462402344 27.076942443847656L40.51900863647461 26.904085159301758L40.57636260986328 26.730064392089844L40.63017654418945 26.55485725402832L40.68040466308594 26.378620147705078L40.7270393371582 26.20136070251465L40.770050048828125 26.023239135742188L40.809425354003906 25.844253540039062L40.84516143798828 25.664440155029297L40.8772087097168 25.48406219482422L40.90558624267578 25.303016662597656L40.930267333984375 25.121437072753906L40.95125198364258 24.939300537109375L40.96852111816406 24.756921768188477L40.98207092285156 24.57415771484375L40.99189758300781 24.391124725341797L40.99800109863281 24.2080020904541L41.0003662109375 24.02471351623535L40.99900436401367 23.841440200805664L40.99391555786133 23.658302307128906L40.98508834838867 23.4752197265625L40.97254180908203 23.29237174987793L40.95627212524414 23.109811782836914L40.93629455566406 22.92765998840332L40.91261291503906 22.74595832824707L40.88523483276367 22.564769744873047L40.85415267944336 22.384077072143555L40.819427490234375 22.204177856445312L40.78104019165039 22.025005340576172L40.7390022277832 21.846607208251953L40.693336486816406 21.66908836364746L40.64409637451172 21.492639541625977L40.59123229980469 21.317102432250977L40.534828186035156 21.142730712890625L40.474884033203125 20.969560623168945L40.41142654418945 20.797626495361328L40.3444938659668 20.627065658569336L40.27407455444336 20.457836151123047L40.20024871826172 20.290128707885742L40.12299346923828 20.123891830444336L40.042396545410156 19.959321975708008L39.95845031738281 19.796396255493164L39.87122344970703 19.63524055480957L39.780723571777344 19.47588539123535L39.68699645996094 19.318405151367188L39.590087890625 19.16286849975586L39.49001693725586 19.009321212768555L39.3868522644043 18.85785484313965L39.2806282043457 18.708526611328125L39.171348571777344 18.561344146728516L39.05915451049805 18.416488647460938L38.94402313232422 18.27393341064453L38.825984954833984 18.133726119995117L38.70510482788086 17.995933532714844L38.58147048950195 17.860660552978516L38.45513153076172 17.72795295715332L38.326080322265625 17.59781265258789L38.19441223144531 17.4703369140625L38.060184478759766 17.345569610595703L37.923431396484375 17.223554611206055L37.784217834472656 17.10434341430664L37.64265441894531 16.988027572631836L37.498680114746094 16.874570846557617L37.35247039794922 16.764095306396484L37.20403289794922 16.6566162109375L37.05343246459961 16.55217742919922L36.9007682800293 16.450843811035156L36.74600601196289 16.352603912353516L36.5893440246582 16.257572174072266L36.430755615234375 16.16573715209961L36.27031326293945 16.0771427154541L36.108089447021484 15.991826057434082L35.9442138671875 15.909854888916016L35.778682708740234 15.831228256225586L35.611549377441406 15.755974769592285L35.44297409057617 15.684160232543945L35.272918701171875 15.615774154663086L35.10154724121094 15.550878524780273L34.928855895996094 15.48947525024414L34.754981994628906 15.431608200073242L34.57993698120117 15.377286911010742L34.403865814208984 15.32655143737793L34.22675323486328 15.279403686523438L34.04871368408203 15.235868453979492L33.869873046875 15.195976257324219L33.690216064453125 15.159727096557617L33.5098762512207 15.127145767211914L33.32890319824219 15.098243713378906L33.147377014160156 15.073030471801758L32.96537780761719 15.051519393920898L32.78298568725586 15.033719062805176L32.60027313232422 15.019636154174805L32.41728210449219 15.009275436401367L32.23414993286133 15.002643585205078L31.941102981567383 14.999652862548828L31.40736198425293 14.993366241455078Q31.34839630126953 14.992671966552734 31.289464950561523 14.990585327148438L30.761024475097656 14.97188949584961Q30.702045440673828 14.969802856445312 30.643131256103516 14.966323852539062L30.120420455932617 14.935462951660156Q30.061378479003906 14.931976318359375 30.00243377685547 14.927095413208008L29.485876083374023 14.884315490722656Q29.426725387573242 14.879417419433594 29.367708206176758 14.873115539550781L28.85773277282715 14.81866455078125Q28.79840087890625 14.81233024597168 28.739238739013672 14.804580688476562L28.236270904541016 14.738703727722168Q28.17669677734375 14.730901718139648 28.117328643798828 14.72166919708252L27.621793746948242 14.644611358642578Q27.561908721923828 14.635299682617188 27.502267837524414 14.62453842163086L27.01459503173828 14.53654956817627Q26.954315185546875 14.525673866271973 26.894319534301758 14.513323783874512L26.414936065673828 14.41464614868164Q26.35419464111328 14.402142524719238 26.293779373168945 14.38813591003418L25.82310676574707 14.279016494750977Q25.761808395385742 14.264806747436523 25.70088768005371 14.249055862426758L25.23935890197754 14.129741668701172Q25.17742156982422 14.113730430603027 25.115915298461914 14.096138954162598L24.663951873779297 13.966875076293945Q24.601289749145508 13.948953628540039 24.539113998413086 13.929403305053711L24.097143173217773 13.790437698364258Q24.033647537231445 13.770472526550293 23.970705032348633 13.748825073242188L23.539155960083008 13.600400924682617Q23.474748611450195 13.578248023986816 23.410966873168945 13.554349899291992L22.990264892578125 13.396716117858887Q22.924846649169922 13.372203826904297 22.860136032104492 13.34587287902832L22.450706481933594 13.17927360534668Q22.384170532226562 13.152198791503906 22.318437576293945 13.123224258422852L21.92070960998535 12.947905540466309Q21.852985382080078 12.918052673339844 21.786174774169922 12.886207580566406L21.400571823120117 12.702417373657227Q21.331558227539062 12.669523239135742 21.26358413696289 12.63453483581543L20.890535354614258 12.442517280578613Q20.820167541503906 12.40629768371582 20.7509822845459 12.367868423461914L20.390911102294922 12.167871475219727Q20.319129943847656 12.128000259399414 20.248695373535156 12.085793495178223L19.90203094482422 11.878061294555664Q19.82878303527832 11.83416748046875 19.7570743560791 11.787797927856445L19.424243927001953 11.572577476501465Q19.349531173706055 11.52426528930664 19.27658462524414 11.473325729370117L18.9580135345459 11.250863075256348Q18.881847381591797 11.197675704956055 18.807708740234375 11.141695022583008L18.50382423400879 10.912235260009766Q18.42629051208496 10.853690147399902 18.351089477539062 10.792177200317383L18.06231689453125 10.55596923828125Q17.98353385925293 10.49152660369873 17.907440185546875 10.423932075500488L17.634206771850586 10.181219100952148Q17.55439567565918 10.110322952270508 17.47768211364746 10.036084175109863L17.220413208007812 9.787114143371582Q17.139856338500977 9.709156036376953 17.062875747680664 9.627665519714355L16.82200050354004 9.372682571411133Q16.74112892150879 9.287076950073242 16.664379119873047 9.197757720947266L16.440322875976562 8.937009811401367Q16.359683990478516 8.843164443969727 16.283782958984375 8.745443344116211L16.07697105407715 8.47917652130127Q15.997251510620117 8.376537322998047 15.922971725463867 8.2698974609375L15.733831405639648 7.998355865478516Q15.655889511108398 7.886458396911621 15.584163665771484 7.770479202270508L15.413122177124023 7.493910789489746Q15.337987899780273 7.372419357299805 15.26991081237793 7.2468366622924805L15.117393493652344 6.965487480163574Q15.046270370483398 6.834283351898193 14.983098983764648 6.699070930480957L14.849533081054688 6.413186073303223Q14.783727645874023 6.272336483001709 14.726799964904785 6.127670764923096L14.6126127243042 5.837496757507324Q14.553560256958008 5.687432289123535 14.504301071166992 5.53387451171875L14.409919738769531 5.239657878875732Q14.359076499938965 5.081162929534912 14.318886756896973 4.919637680053711L14.24473762512207 4.621623992919922Q14.2034912109375 4.455856800079346 14.173656463623047 4.287661075592041L14.120162963867188 3.9860968589782715Q14.089733123779297 3.8145604133605957 14.071318626403809 3.641322135925293L14.038909912109375 3.336453437805176Q14.020265579223633 3.161057472229004 14.014026641845703 2.98478364944458L14.003128051757812 2.6768558025360107Q14.0 2.5884556770324707 14.0 2.5V1.0H24.0V2.3665552139282227L24.01738929748535 2.394674301147461L24.05430793762207 2.4476749897003174L24.105499267578125 2.5135843753814697L24.17218589782715 2.5911903381347656L24.255184173583984 2.6790504455566406L24.355195999145508 2.775836229324341L24.472524642944336 2.8800599575042725L24.607301712036133 2.9903032779693604L24.759531021118164 3.1052494049072266L24.928979873657227 3.2235782146453857L25.11536979675293 3.3441059589385986L25.31839370727539 3.4657630920410156L25.537464141845703 3.587444543838501L25.772180557250977 3.708259105682373L26.021944046020508 3.8273050785064697L26.286216735839844 3.9437966346740723L26.56441879272461 4.056998252868652L26.855911254882812 4.166219234466553L27.16012954711914 4.270849704742432L27.476411819458008 4.370296478271484L27.8042049407959 4.464046955108643L28.14286994934082 4.551599025726318L28.49183464050293 4.632501602172852L28.85050392150879 4.706331253051758L29.218223571777344 4.772678375244141L29.594524383544922 4.831193923950195L29.97874641418457 4.8815178871154785L30.370380401611328 4.923333168029785L30.768835067749023 4.956332206726074L31.173585891723633 4.980228900909424L31.584129333496094 4.994754314422607L32.058895111083984 5.000347137451172L32.3359489440918 5.0031609535217285L32.722686767578125 5.013940334320068L33.10908508300781 5.032588958740234L33.495059967041016 5.059103965759277L33.880401611328125 5.093471050262451L34.26496124267578 5.135676860809326L34.648582458496094 5.185703277587891L35.03110885620117 5.243531703948975L35.412376403808594 5.3091349601745605L35.79222106933594 5.382486820220947L36.17052459716797 5.463563919067383L36.54705810546875 5.552317142486572L36.92171096801758 5.648719310760498L37.29436111450195 5.752740383148193L37.66477966308594 5.864316463470459L38.032875061035156 5.983419895172119L38.3984375 6.109981536865234L38.761383056640625 6.243974685668945L39.12148666381836 6.385313034057617L39.47868347167969 6.533974647521973L39.83272933959961 6.689855575561523L40.183563232421875 6.852928161621094L40.5310173034668 7.023119926452637L40.8748893737793 7.2003254890441895L41.21509552001953 7.38450288772583L41.55149459838867 7.57557487487793L41.88395309448242 7.773471832275391L42.21225357055664 7.978056907653809L42.536380767822266 8.189323425292969L42.856109619140625 8.40712833404541L43.17134094238281 8.631399154663086L43.48194885253906 8.86204719543457L43.787757873535156 9.098943710327148L44.0887451171875 9.342066764831543L44.384674072265625 9.591232299804688L44.675472259521484 9.84637451171875L44.961029052734375 10.107394218444824L45.24120330810547 10.37416934967041L45.51588439941406 10.646587371826172L45.78499221801758 10.924574851989746L46.04835891723633 11.20796012878418L46.30588150024414 11.496620178222656L46.55748748779297 11.790484428405762L46.80308151245117 12.089432716369629L47.04254150390625 12.393336296081543L47.27571487426758 12.701977729797363L47.50259017944336 13.01535415649414L47.7230339050293 13.333276748657227L47.93695068359375 13.655611991882324L48.14427185058594 13.982251167297363L48.34489440917969 14.313039779663086L48.53874206542969 14.647848129272461L48.725738525390625 14.986539840698242L48.905784606933594 15.328943252563477L49.078834533691406 15.67497444152832L49.244781494140625 16.02439308166504L49.40360641479492 16.37718963623047L49.55519485473633 16.733091354370117L49.699527740478516 17.09207534790039L49.836509704589844 17.453874588012695L49.966094970703125 17.818408966064453L50.088233947753906 18.18549156188965L50.202857971191406 18.554929733276367L50.309967041015625 18.926755905151367L50.40945816040039 19.300579071044922L50.50132369995117 19.67636489868164L50.58552551269531 20.05398941040039L50.66202163696289 20.433263778686523L50.73076248168945 20.81389617919922L50.79175567626953 21.195951461791992L50.84495544433594 21.579172134399414L50.89033889770508 21.96339225769043L50.927886962890625 22.348417282104492L50.95759201049805 22.734130859375L50.979434967041016 23.12035369873047L50.993412017822266 23.507028579711914L50.99951171875 23.89383888244629L50.99773406982422 24.280664443969727L50.98808288574219 24.667457580566406L50.970558166503906 25.053897857666016L50.945167541503906 25.439931869506836L50.91191482543945 25.825443267822266L50.87083435058594 26.21004867553711L50.821922302246094 26.593830108642578L50.76520919799805 26.976531982421875L50.70069885253906 27.358047485351562L50.62846374511719 27.738048553466797L50.548492431640625 28.116561889648438L50.4608268737793 28.49339485168457L50.365516662597656 28.86831283569336L50.2625846862793 29.24125099182129L50.15209197998047 29.611984252929688L50.034053802490234 29.980443954467773L49.908546447753906 30.346385955810547L49.77561569213867 30.70970916748047L49.63534164428711 31.070186614990234L49.48770523071289 31.427846908569336L49.33283615112305 31.782384872436523L49.170799255371094 32.13365936279297L49.001644134521484 32.48155975341797L48.82542419433594 32.82597351074219L48.6422119140625 33.1667594909668L48.4521484375 33.503658294677734L48.255226135253906 33.83668899536133L48.05155944824219 34.1656379699707L47.841270446777344 34.49032211303711L47.6244010925293 34.81068420410156L47.4010009765625 35.126625061035156L47.17130661010742 35.43783950805664L46.93526840209961 35.744380950927734L46.69306182861328 36.046024322509766L46.4447135925293 36.34272766113281L46.190433502197266 36.63425064086914L45.93027114868164 36.92053985595703L45.66426086425781 37.201541900634766L45.39269256591797 37.47696304321289L45.115474700927734 37.74689483642578L44.83285903930664 38.01108169555664L44.81746292114258 38.024898529052734L55.7733154296875 57.0H44.22683334350586Z"></path></svg><p>TMS implementation for UK hauliers, 3PLs and pallet network members.</p></div>
+      <div><span class="col-h">Work</span><a href="/#work">Services</a><a href="/#method">How a depot goes live</a><a href="/qargo/">Qargo help</a></div>
+      <div><span class="col-h">This page</span><a href="#services">What I do</a><a href="#approach">How it works</a><a href="#faq">Questions</a></div>
+      <div><span class="col-h">Company</span><a href="#about">About</a><a href="/privacy.html">Privacy notice</a><a href="/llms.txt">For AI assistants (llms.txt)</a>
+        <button type="button" class="theme-switch" id="theme-toggle" role="switch" aria-checked="false" aria-label="Dark mode" title="Switch between light and dark"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg><span class="track" aria-hidden="true"><span class="knob"></span></span><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Roadmap Consulting Ltd, registered in England and Wales.</span>
+      <span class="mono">Company No. 16726574 · VAT No. 520 4345 31</span>
+      <span>Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ.</span>
+      <span>Map background contains OS data © Crown copyright and database right 2026.</span>
+    </div>
   </div>
 </footer>
+
 <script>
+// Light and dark: follows the browser unless the visitor picks one
 (function(){
   var root=document.documentElement, btn=document.getElementById('theme-toggle');
   var mq=window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
@@ -449,7 +595,7 @@ header.site.open .menu-btn .i-open { display:none; } header.site.open .menu-btn 
   if(mq){ var on=function(){ if(!saved) sync(); }; if(mq.addEventListener) mq.addEventListener('change',on); else if(mq.addListener) mq.addListener(on); }
   sync();
 })();
-</script><script>
+// Click to reveal contact details (keeps them out of the page source as plain text)
 (function(){
   document.querySelectorAll('button.reveal').forEach(function(b){
     b.addEventListener('click',function(){
@@ -460,47 +606,34 @@ header.site.open .menu-btn .i-open { display:none; } header.site.open .menu-btn 
     });
   });
 })();
-</script><script>
-// Join each route dot to the next one only when both sit on the same row
+// Menu on narrow screens
 (function(){
-  var items=[].slice.call(document.querySelectorAll('.route li'));
-  function link(){ items.forEach(function(li,i){ var n=items[i+1]; li.classList.toggle('link', !!n && Math.abs(n.offsetTop-li.offsetTop)<4); }); }
-  link(); window.addEventListener('resize', link); if(document.fonts && document.fonts.ready) document.fonts.ready.then(link);
-})();
-</script><script>
-(function(){
-  var root=document.documentElement;
-  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var header=document.querySelector('header.site');
-  // Header tightens once the hero has scrolled past
-  function onScroll(){ header.classList.toggle('compact', window.scrollY > 60); }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  if(reduce || !('IntersectionObserver' in window)) return;
-  root.classList.add('js');
-  // Sections fade up once
-  var groups=[['section.s .head',0],['.services .service',1],['.about > *',1],['.facts .fact',1],['.contact .channel',1]];
-  groups.forEach(function(g){ document.querySelectorAll(g[0]).forEach(function(el,i){ el.classList.add('rv'); el.style.setProperty('--d', g[1]?i:0); }); });
-  document.querySelectorAll('.route li').forEach(function(li,i){ li.style.setProperty('--i', i); });
-  var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -10% 0px', threshold:0.15});
-  document.querySelectorAll('.rv, .route').forEach(function(el){ io.observe(el); });
-  // Map parallax, hero only, small amplitude
-  var map=document.querySelector('.hero .map'), hero=document.querySelector('.hero'), ticking=false;
-  function drift(){ ticking=false; var r=hero.getBoundingClientRect(); if(r.bottom<0) return; map.style.transform='translate3d(0,'+(window.scrollY*0.18).toFixed(1)+'px,0)'; }
-  window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(drift); } }, {passive:true});
-  // Safety net: if anything is still hidden after 4 s (for example printed or captured), show it
-  setTimeout(function(){ document.querySelectorAll('.rv:not(.in), .route:not(.in)').forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top < window.innerHeight) el.classList.add('in'); }); }, 4000);
-})();
-</script>
-<script src="https://book.roadmapconsulting.co.uk/widget.js" data-site="roadmap" data-turnstile="0x4AAAAAAGI088TgLqPJhDec" defer></script>
-<script>
-// Menu on narrow screens (Nick's D1b, 24 Nov 2026)
-(function(){
-  var header=document.querySelector('header.site'), btn=header && header.querySelector('.menu-btn'), nav=document.getElementById('site-nav');
-  if(!btn || !nav) return;
+  var header=document.querySelector('header.site'), btn=header.querySelector('.menu-btn'), nav=document.getElementById('site-nav');
   function set(open){ header.classList.toggle('open',open); btn.setAttribute('aria-expanded',String(open)); }
   btn.addEventListener('click',function(){ set(btn.getAttribute('aria-expanded')!=='true'); });
+  // Header tucks in once the page has scrolled
+  function onScroll(){ header.classList.toggle('compact', window.scrollY > 60); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   nav.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && header.classList.contains('open')){ set(false); btn.focus(); } });
 })();
+// Motion: blocks rise in once, the route draws stop by stop
+(function(){
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  // Map parallax, hero only, small amplitude (as on /qargo/)
+  var map=document.querySelector('.hero .map'), hero=document.querySelector('.hero'), ticking=false;
+  function drift(){ ticking=false; var r=hero.getBoundingClientRect(); if(r.bottom<0) return; map.style.transform='translate3d(0,'+(window.scrollY*0.18).toFixed(1)+'px,0)'; }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(drift); } }, {passive:true});
+  ['.four-parts .rv','.services .rv'].forEach(function(sel){ document.querySelectorAll(sel).forEach(function(el,i){ el.style.setProperty('--d', i); }); });
+  document.querySelectorAll('.route li').forEach(function(li,i){ li.style.setProperty('--i', i); });
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
+  document.querySelectorAll('.rv, .route').forEach(function(el){ io.observe(el); });
+  // Safety net: anything still hidden after 4 s (printed, captured, or a fast jump) is shown
+  setTimeout(function(){ document.querySelectorAll('.rv:not(.in), .route:not(.in)').forEach(function(el){ if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in'); }); }, 4000);
+  window.addEventListener('beforeprint',function(){ document.querySelectorAll('.rv, .route').forEach(function(el){ el.classList.add('in'); }); });
+})();
 </script>
+<script src="https://book.roadmapconsulting.co.uk/widget.js" data-site="roadmap" data-turnstile="0x4AAAAAAGI088TgLqPJhDec" defer></script>
 </body></html>
