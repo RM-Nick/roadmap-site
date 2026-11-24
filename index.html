@@ -73,8 +73,8 @@ section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
 .head-map{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
 .head-map::before{ content:""; position:absolute; inset:0; background:#ffffff30;
   --fade:linear-gradient(90deg, transparent 0%, transparent 18%, #000 46%);
-  -webkit-mask-image:url("/assets/os-map.svg"), var(--fade); -webkit-mask-size:cover, 100% 100%; -webkit-mask-position:center 38%, 0 0; -webkit-mask-repeat:no-repeat; -webkit-mask-composite:source-in;
-  mask-image:url("/assets/os-map.svg"), var(--fade); mask-size:cover, 100% 100%; mask-position:center 38%, 0 0; mask-repeat:no-repeat; mask-composite:intersect; }
+  -webkit-mask-image:url("/assets/os-map.webp"), var(--fade); -webkit-mask-size:cover, 100% 100%; -webkit-mask-position:center 38%, 0 0; -webkit-mask-repeat:no-repeat; -webkit-mask-composite:source-in;
+  mask-image:url("/assets/os-map.webp"), var(--fade); mask-size:cover, 100% 100%; mask-position:center 38%, 0 0; mask-repeat:no-repeat; mask-composite:intersect; }
 @media (max-width:700px){ .head-map::before{ --fade:linear-gradient(90deg, transparent 0%, transparent 30%, #000 75%); } }
 .lockup{ display:flex; align-items:center; gap:12px; color:var(--g-fg); text-decoration:none; font:700 24px/1 var(--display); white-space:nowrap; }
 .lockup:hover{ color:var(--g-fg); }
@@ -105,17 +105,21 @@ section h2{ font-size:clamp(32px,4vw,44px); line-height:1.08; }
 .site .bar{ height:auto; padding-block:16px; }
 .lockup{ font-size:1.9rem; gap:14px; }
 .lockup svg{ width:64px; height:64px; }
+/* Smooth scrolling (24 Nov 2026): the header keeps one layout height, so the page never jumps while it tucks in.
+   On wider screens it sticks 36px up, leaving the 60px compact band in view, and the logo shrinks and moves by transform only. */
 @media (min-width:601px){
-  .site.compact .bar{ padding-block:8px; }
-  .site.compact .lockup{ font-size:1.5rem; }
-  .site.compact .lockup svg{ width:44px; height:44px; }
+  .site{ top:-36px; }
+  .lockup{ transform-origin:left center; }
+  .site.compact .bar{ transform:translateY(18px); }
+  .site.compact .lockup{ transform:scale(.72); }
 }
+@media (min-width:601px) and (max-width:1180px){ .site.compact .nav{ margin-top:-18px; } }
 .site.compact{ box-shadow:0 2px 12px #0b251633; }
-@media (prefers-reduced-motion:no-preference){ .site .bar{ transition:padding .25s ease-out; } .lockup{ transition:font-size .25s ease-out; } .lockup svg{ transition:width .25s ease-out, height .25s ease-out; } .site{ transition:box-shadow .25s ease-out; } }
+@media (prefers-reduced-motion:no-preference){ .site .bar, .lockup{ transition:transform .25s ease-out; } .site{ transition:box-shadow .25s ease-out; } }
 @media (max-width:600px){ .site .bar{ padding-block:16px; } .lockup{ font-size:1.35rem; gap:10px; } .lockup svg{ width:40px; height:40px; } }
 
 /* Map behind the hero and the method band */
-.map{ position:absolute; pointer-events:none; background:var(--map-ink); -webkit-mask:url("/assets/os-map.svg") center / cover no-repeat; mask:url("/assets/os-map.svg") center / cover no-repeat; }
+.map{ position:absolute; pointer-events:none; background:var(--map-ink); -webkit-mask:url("/assets/os-map.webp") center / cover no-repeat; mask:url("/assets/os-map.webp") center / cover no-repeat; }
 
 /* Hero */
 .hero{ position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
@@ -313,6 +317,9 @@ html{ scroll-padding-top:80px; }
   .js .rv.in{ opacity:1; transform:none; }
   /* Hero map drifts slightly slower than the page, as on /qargo/ */
   .js .hero .map{ top:-180px; will-change:transform; }
+  /* Where the browser can, the drift runs on its own scroll timeline, off the main thread (the script below is the fallback) */
+  @keyframes map-drift{ from{ transform:none; } to{ transform:translate3d(0,180px,0); } }
+  @supports (animation-timeline: scroll()){ .js .hero .map{ animation:map-drift linear both; animation-timeline:scroll(root); animation-range:0px 1000px; } }
   .js .route li::before{ transform:scaleX(0); transition:transform .28s ease-out; transition-delay:calc(var(--i,0) * 140ms + 200ms); }
   .js .route.in li::before{ transform:none; }
   .js .route .dot{ opacity:0; transform:scale(.6); transition:opacity .2s ease-out, transform .2s ease-out; transition-delay:calc(var(--i,0) * 140ms + 120ms); }
@@ -623,7 +630,7 @@ html{ scroll-padding-top:80px; }
   function set(open){ header.classList.toggle('open',open); btn.setAttribute('aria-expanded',String(open)); }
   btn.addEventListener('click',function(){ set(btn.getAttribute('aria-expanded')!=='true'); });
   // Header tucks in once the page has scrolled
-  function onScroll(){ header.classList.toggle('compact', window.scrollY > 60); }
+  function onScroll(){ header.classList.toggle('compact', window.scrollY > 4); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   nav.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && header.classList.contains('open')){ set(false); btn.focus(); } });
@@ -688,7 +695,7 @@ html{ scroll-padding-top:80px; }
   // Map parallax, hero only, small amplitude (as on /qargo/)
   var map=document.querySelector('.hero .map'), hero=document.querySelector('.hero'), ticking=false;
   function drift(){ ticking=false; var r=hero.getBoundingClientRect(); if(r.bottom<0) return; map.style.transform='translate3d(0,'+(window.scrollY*0.18).toFixed(1)+'px,0)'; }
-  window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(drift); } }, {passive:true});
+  if(!(window.CSS && CSS.supports && CSS.supports('animation-timeline','scroll()'))) window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(drift); } }, {passive:true});
   document.querySelectorAll('.four-parts .rv').forEach(function(el,i){ el.style.setProperty('--d', i); });
   document.querySelectorAll('.route li').forEach(function(li,i){ li.style.setProperty('--i', i); });
   var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
